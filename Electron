@@ -4,11 +4,11 @@
 <version>1.1</version>
 <objective>Leak lava from the enemy's obsidian core and destroy their two gold monuments.</objective>
 <authors>
-    <author contribution="Design, bulding, XML">Sharpie</author>
+    <author uuid="1e79acd3-562e-42d4-9a6c-e923f5284329" contribution="Design, bulding, XML"/>
 </authors>
 <contributors>
-	<contributor contribution="Some help when needed">iCheetah_</contributor>
-	<contributor contribution="Design">iChristian_</contributor>
+	<contributor uuid="60a2aca8-d6f8-41d1-8c47-44da89b75b36" contribution="Some help when needed"/>
+	<contributor uuid="6aa9a1e1-4743-4b80-8426-c2ebeb95b77e" contribution="Design"/>
 </contributors>
 <timelock>on</timelock>
 <teams>
@@ -63,14 +63,14 @@
         <cuboid min="94,12,0" max="95,12,1"/>
     </spawn>
     <default yaw="-90" kit="restrict-obs">
-        <circle name="obs-spawn" center="0,52" radius="5"/>
+        <cuboid min="0,30,0" max="0,32,0"/>
     </default>
 </spawns>
 <modes>
     <mode after="10m" material="gold block" name="GOLD CORE MODE"/>
-    <mode after="20m" material="glass" name="GLASS CORE MODE"/>
+    <mode after="25m" material="glass" name="GLASS CORE MODE"/>
 </modes>
-<cores material="obsidian" leak="5" mode-changes="true">
+<cores material="obsidian" leak="4" mode-changes="true">
     <core team="red">
         <cuboid min="24,5,-2" max="31,12,4"/>
     </core>
@@ -91,7 +91,7 @@
         <cuboid min="-63,12,-40" max="-60,19,-37"/>
     </destroyable>
     <destroyable name="Right Monument">
-        <cuboid min="-66,10,35" max="-58,20,44"/>
+        <cuboid min="-64,12,37" max="-59,19,42"/>
     </destroyable>
 </destroyables>
 <toolrepair>
