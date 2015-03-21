@@ -143,22 +143,22 @@
   <wools>
     <wool team="red-team" color="orange" location="83.5,12,20.5">
       <monument>
-        <block>-0.5,11,-98.5</block>
+        <block>0,11,-98</block>
       </monument>
     </wool>
     <wool team="red-team" color="purple" location="-79.5,12,20.5">
       <monument>
-        <block>3.5,11,-98.5</block>
+        <block>3,11,-98</block>
       </monument>
     </wool>
     <wool team="blue-team" color="lime" location="83.5,12,-63.5">
       <monument>
-        <block>4.5,11,55.5</block>
+        <block>4,11,55</block>
       </monument>
     </wool>
     <wool team="blue-team" color="yellow" location="-79.5,12,-63.5">
       <monument>
-        <block>0.5,11,55.5</block>
+        <block>0,11,55</block>
       </monument>
     </wool>
   </wools>
