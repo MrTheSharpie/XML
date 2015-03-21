@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<map proto="1.3.2">
+<name>Electron</name>
+<version>1.1</version>
+<objective>Leak lava from the enemy's obsidian core and destroy their two gold monuments.</objective>
+<authors>
+    <author contribution="Design, bulding, XML">Sharpie</author>
+</authors>
+<contributors>
+	<contributor contribution="Some help when needed">iCheetah_</contributor>
+	<contributor contribution="Design">iChristian_</contributor>
+</contributors>
+<timelock>on</timelock>
+<teams>
+    <team color="dark red" max="16">Red Team</team>
+    <team color="blue" max="16">Blue Team</team>
+</teams>
+<regions>
+    <cuboid name="play" min="-95,-oo,-44" max="96,30,46"/>
+    <circle name="red-spawn" center="-94,0" radius="4.5"/>
+    <circle name="blue-spawn" center="95,0" radius="4.5"/>
+    <apply block="deny-all" message="You may not interact with blocks outside the playing field.">
+        <negative>
+            <region name="play"/>
+        </negative>
+    </apply>
+    <apply block="deny-all" message="You may not destroy the spawn area!">
+        <region name="red-spawn"/>
+        <region name="blue-spawn"/>
+    </apply>
+</regions>
+<filters>
+    <filter name="only-red" parents="deny-all">
+        <allow>
+            <team>red</team>
+        </allow>
+    </filter>
+    <filter name="only-blue" parents="deny-all">
+        <allow>
+            <team>blue</team>
+        </allow>
+    </filter>
+</filters>
+<kits>
+    <kit name="spawn">
+        <item slot="0">diamond sword</item>
+        <item slot="1" enchantment="arrow infinite:1">bow</item>
+        <item slot="28" amount="1">arrow</item>
+        <item slot="2" enchantment="durability:3;dig speed:2">iron pickaxe</item>
+        <item slot="3" amount="64">smooth brick</item>
+        <item slot="4" amount="64">smooth brick</item>
+        <item slot="5" amount="64">glass</item>
+        <item slot="6" amount="64" damage="1">wood</item>
+        <item slot="7" amount="32">ladder</item>
+        <item slot="8" amount="32">golden carrot</item>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="blue" kit="spawn" yaw="-90">
+        <cuboid min="-94,12,0" max="-93,12,1"/>
+    </spawn>
+    <spawn team="red" kit="spawn" yaw="180">
+        <cuboid min="94,12,0" max="95,12,1"/>
+    </spawn>
+    <default yaw="-90" kit="restrict-obs">
+        <cuboid min="0,30,0" max="0,32,0"/>
+    </default>
+</spawns>
+<modes>
+    <mode after="10m" material="gold block" name="GOLD CORE MODE"/>
+    <mode after="25m" material="glass" name="GLASS CORE MODE"/>
+</modes>
+<cores material="obsidian" leak="4" mode-changes="true">
+    <core team="red">
+        <cuboid min="24,5,-2" max="31,12,4"/>
+    </core>
+    <core team="blue">
+        <cuboid min="-30,5,-2" max="-23,12,4"/>
+    </core>
+</cores>
+<destroyables owner="red" materials="gold block">
+    <destroyable name="Left Monument">
+        <cuboid min="61,12,39" max="64,19,42"/>
+    </destroyable>
+    <destroyable name="Right Monument">
+        <cuboid min="61,12,-39" max="64,19,-36"/>
+    </destroyable>
+</destroyables>
+<destroyables owner="blue" materials="gold block">
+    <destroyable name="Left Monument">
+        <cuboid min="-63,12,-40" max="-60,19,-37"/>
+    </destroyable>
+    <destroyable name="Right Monument">
+        <cuboid min="-64,12,37" max="-59,19,42"/>
+    </destroyable>
+</destroyables>
+<toolrepair>
+    <tool>diamond sword</tool>
+    <tool>bow</tool>
+    <tool>iron pickaxe</tool>
+    <tool>arrow</tool>
+</toolrepair>
+<itemremove>
+    <item>obsidian</item>
+    <item>gold block</item>
+    <item>smooth brick</item>
+    <item>glass</item>
+    <item>ladder</item>
+    <item>ender stone</item>
+    <item>arrow</item>
+    <item>golden carrot</item>
+    <item>wood</item>
+	<item>gold plate</item>
+	<item>trap door</item>
+</itemremove>
+</map>
