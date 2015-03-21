@@ -63,14 +63,14 @@
         <cuboid min="94,12,0" max="95,12,1"/>
     </spawn>
     <default yaw="-90" kit="restrict-obs">
-        <cuboid min="0,30,0" max="0,32,0"/>
+        <circle name="obs-spawn" center="0,52" radius="5"/>
     </default>
 </spawns>
 <modes>
     <mode after="10m" material="gold block" name="GOLD CORE MODE"/>
-    <mode after="25m" material="glass" name="GLASS CORE MODE"/>
+    <mode after="20m" material="glass" name="GLASS CORE MODE"/>
 </modes>
-<cores material="obsidian" leak="4" mode-changes="true">
+<cores material="obsidian" leak="5" mode-changes="true">
     <core team="red">
         <cuboid min="24,5,-2" max="31,12,4"/>
     </core>
@@ -91,7 +91,7 @@
         <cuboid min="-63,12,-40" max="-60,19,-37"/>
     </destroyable>
     <destroyable name="Right Monument">
-        <cuboid min="-64,12,37" max="-59,19,42"/>
+        <cuboid min="-66,10,35" max="-58,20,44"/>
     </destroyable>
 </destroyables>
 <toolrepair>
