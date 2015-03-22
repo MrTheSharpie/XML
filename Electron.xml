@@ -18,7 +18,7 @@
 <regions>
     <cuboid name="play" min="-95,-oo,-51" max="96,30,53"/>
     <cuboid name="red-spawn" min="76,6,-14" max="98,17,16"/>
-    <cuboid name="blue-spawn" min="-96,6,14" max="-77,17,16"/>
+    <cuboid name="blue-spawn" min="-71,6,14" max="-96,7,-14"/>
     <apply block="deny-all" message="You may not interact with blocks outside the playing field.">
         <negative>
             <region name="play"/>
