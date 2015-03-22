@@ -47,7 +47,7 @@
         </allow>
     </filter>
     <filter name="only-iron">
-		<block>iron block</block>
+	<block>iron block</block>
     </filter>
 </filters>
 <kits>
@@ -92,7 +92,7 @@
         <cuboid min="61,12,39" max="64,19,42"/>
     </destroyable>
     <destroyable name="Right Monument">
-        <cuboid min="61,12,-39" max="64,19,-36"/>
+        <cuboid min="61,12,-41" max="64,19,-36"/>
     </destroyable>
 </destroyables>
 <destroyables owner="blue" materials="gold block">
