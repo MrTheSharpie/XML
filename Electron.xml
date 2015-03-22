@@ -30,10 +30,10 @@
     </apply>
     <apply enter="only-blue" message="You may not enter the enemy spawn!">
     	<region name="blue-spawn"/>
-	</apply>
+    </apply>
     <apply enter="only-red" message="You may not enter the enemy spawn!">
 	<region name="red-spawn"/>
-	</apply>
+    </apply>
 </regions>
 <filters>
     <filter name="only-red" parents="deny-all">
@@ -45,6 +45,9 @@
         <allow>
             <team>blue</team>
         </allow>
+    </filter>
+    <filter name="only-iron">
+		<block>iron block</block>
     </filter>
 </filters>
 <kits>
