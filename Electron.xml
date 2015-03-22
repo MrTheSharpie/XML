@@ -16,18 +16,22 @@
     <team color="blue" max="16">Blue Team</team>
 </teams>
 <regions>
-    <cuboid name="play" min="-95,-oo,-44" max="96,30,46"/>
-    <circle name="red-spawn" center="-94,0" radius="4.5"/>
-    <circle name="blue-spawn" center="95,0" radius="4.5"/>
+    <cuboid name="play" min="-95,-oo,-51" max="96,30,53"/>
+    <cuboid name="red-spawn" min="76,6,-14" max="98,17,16"/>
+    <cuboid name="blue-spawn" min="-96,6,14" max=-77,17,16/>
     <apply block="deny-all" message="You may not interact with blocks outside the playing field.">
         <negative>
             <region name="play"/>
         </negative>
     </apply>
-    <apply block="deny-all" message="You may not destroy the spawn area!">
+    <apply block-place="deny-all" block-break="only-iron" message="`7You may only break the `6iron blocks `7at spawn!">
         <region name="red-spawn"/>
         <region name="blue-spawn"/>
     </apply>
+    <apply enter="only-blue" message="`7You may not enter the enemy spawn!">
+    	<region name="blue-spawn"/>
+    <apply enter="only-red" message="`7You may not enter the enemy spawn!">
+	<region name="red-spawn"/>
 </regions>
 <filters>
     <filter name="only-red" parents="deny-all">
@@ -43,16 +47,16 @@
 </filters>
 <kits>
     <kit name="spawn">
-        <item slot="0">diamond sword</item>
+        <item slot="0">iron sword</item>
         <item slot="1" enchantment="arrow infinite:1">bow</item>
         <item slot="28" amount="1">arrow</item>
-        <item slot="2" enchantment="durability:3;dig speed:2">iron pickaxe</item>
+        <item slot="2" enchantment="durability:3">diamond pickaxe</item>
         <item slot="3" amount="64">smooth brick</item>
         <item slot="4" amount="64">smooth brick</item>
         <item slot="5" amount="64">glass</item>
         <item slot="6" amount="64" damage="1">wood</item>
-        <item slot="7" amount="32">ladder</item>
-        <item slot="8" amount="32">golden carrot</item>
+        <item slot="7" amount="2">golden apple</item>
+        <item slot="8" amount="64">golden carrot</item>
     </kit>
 </kits>
 <spawns>
@@ -110,7 +114,7 @@
     <item>arrow</item>
     <item>golden carrot</item>
     <item>wood</item>
-	<item>gold plate</item>
-	<item>trap door</item>
+    <item>gold plate</item>
+    <item>trap door</item>
 </itemremove>
 </map>
