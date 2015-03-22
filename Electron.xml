@@ -99,9 +99,9 @@
     </destroyable>
 </destroyables>
 <toolrepair>
-    <tool>diamond sword</tool>
+    <tool>iron sword</tool>
     <tool>bow</tool>
-    <tool>iron pickaxe</tool>
+    <tool>diamond pickaxe</tool>
     <tool>arrow</tool>
 </toolrepair>
 <itemremove>
