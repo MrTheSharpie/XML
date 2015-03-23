@@ -13,8 +13,8 @@
 </contributors>
 <timelock>on</timelock>
 <teams>
-    <team color="dark red" max="16">Red Team</team>
-    <team color="blue" max="16">Blue Team</team>
+    <team color="dark red" max="12">Red Team</team>
+    <team color="blue" max="12">Blue Team</team>
 </teams>
 <regions>
     <cuboid name="play" min="-95,-00,-51" max="96,30,53"/>
