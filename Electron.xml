@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<map proto="1.3.2">
+<map proto="1.3.6">
 <name>Electron</name>
 <version>1.2</version>
 <objective>Leak lava from the enemy's obsidian core and destroy their two gold monuments.</objective>
@@ -68,10 +68,10 @@
 </kits>
 <spawns>
     <spawn team="blue" kit="spawn" yaw="-90">
-        <cuboid min="-94,12,0" max="-93,12,1"/>
+        <cuboid min="-94.5,12,0" max="-93,12,1"/>
     </spawn>
     <spawn team="red" kit="spawn" yaw="180">
-        <cuboid min="94,12,0" max="95,12,1"/>
+        <cuboid min="94.5,12,0" max="95,12,1"/>
     </spawn>
     <default yaw="-90" kit="restrict-obs">
         <cuboid min="0,23,-28" max="0,25,-28"/>
