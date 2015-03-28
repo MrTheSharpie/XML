@@ -14,6 +14,32 @@
     <team color="dark red" max="10">Red</team>
     <team color="blue" max="10">Blue</team>
 </teams>
+<kits>
+	<kit name="obs">
+	    <potion duration="oo" amplifier="5">night vision</potion>
+	</kit>
+    <kit name="spawn">
+		<potion duration="4" amplifier="1">speed</potion>
+        <potion duration="2" amplifier="1">increase damage</potion>
+        <potion duration="8" amplifier="100">fast digging</potion>
+        <potion duration="8" amplifier="1">regeneration</potion>
+		<potion duration="oo" amplifier="5">night vision</potion>
+    </kit>
+    <kit name="red" parents="spawn">
+        <helmet color="cd0000">leather helmet</helmet>
+        <chestplate color="cd0000">leather chestplate</chestplate>
+        <leggings enchantment="protection projectile:2" color="cd0000">leather leggings</leggings>
+	<boots color="cd0000">leather boots</boots>
+	<item slot="8" amount="8">baked potato</item>
+    </kit>
+    <kit name="blue" parents="spawn">
+        <helmet color="0066cc">leather helmet</helmet>
+        <chestplate color="0066cc">leather chestplate</chestplate>
+        <leggings enchantment="protection projectile:2" color="0066cc">leather leggings</leggings>
+        <boots color="0066cc">leather boots</boots>
+        <item slot="8" amount="8">baked potato</item>
+    </kit>
+</kits>
 <regions>
     <rectangle name="play" min="-88,1134" max="88,1770"/>
 	<cuboid name="red-score" min="81,198,1149" max="88,209,1156"/>
@@ -38,23 +64,6 @@
             </negative>
         </apply>
 </regions>
-<kits>
-    <kit name="spawn">
-	<item slot="1" amount="8">baked potato</item>
-    </kit>
-    <kit name="red" parents="spawn">
-	<chestplate color="cd0000" damage="-3000">leather chestplate</chestplate>
-	<helmet color="cd0000" damage="-3000">leather helmet</helmet>
-        <leggings enchantment="protection projectile:2" color="cd0000">leather leggings</leggings>
-	<boots color="cd0000" damage="-3000">leather boots</boots>
-    </kit>
-	<kit name="blue" parents="spawn">
-	    <chestplate color="0066c" damage="-3000">leather chestplate</chestplate>
-	    <helmet color="0066c" damage="-3000">leather helmet</helmet>
-            <leggings enchantment="protection projectile:2" color="0066cc">leather leggings</leggings>
-	    <boots color="0066c" damage="-3000">leather boots</boots>
-	</kit>
-</kits>
 <spawns>
     <spawn team="blue" kit="blue" yaw="-90">
         <cuboid min="-87,189,1148" max="-74,197,1156"/>
