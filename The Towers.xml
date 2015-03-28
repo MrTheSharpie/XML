@@ -44,13 +44,13 @@
     <kit name="red" parents="spawn">
 	<chestplate color="cd0000" damage="-3000">leather chestplate</chestplate>
 	<helmet color="cd0000" damage="-3000">leather helmet</helmet>
-	<leggins color="cd0000" enchantment="protection projectile:1" damage="-3000">lether leggins</leggins>
+        <leggings enchantment="protection projectile:2" color="cd0000">leather leggings</leggings>>
 	<boots color="cd0000" damage="-3000">leather boots</boots>
     </kit>
 	<kit name="blue" parents="spawn">
 	    <chestplate color="0066c" damage="-3000">leather chestplate</chestplate>
 	    <helmet color="0066c" damage="-3000">leather helmet</helmet>
-	    <leggins color="0066c" enchantment="protection projectile:1" damage="-3000">lether leggins</leggins>
+            <leggings enchantment="protection projectile:2" color="0066cc">leather leggings</leggings>
 	    <boots color="0066c" damage="-3000">leather boots</boots>
 	</kit>
 </kits>
