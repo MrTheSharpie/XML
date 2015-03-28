@@ -10,8 +10,8 @@
 	<contributor contribution="XML">Sharpie</contributor>
 </contributors>
 <teams>
-    <team color="dark red" max="10">red</team>
-    <team color="blue" max="10">blue</team>
+    <team color="dark red" max="10">Red</team>
+    <team color="blue" max="10">Blue</team>
 </teams>
 <regions>
     <rectangle name="play" min="-88,1134" max="88,1770"/>
@@ -20,38 +20,38 @@
 	<cuboid name="red-spawn" min="77,189,1148" max="88,197,1156"/>
 	<cuboid name="blue-spawn" min="-87,189,1148" max="-74,197,1156"/>
 	<apply enter="only-red" message="You must not enter your own scorebox!">
-		<region name="blue-score"/>
+            <region name="blue-score"/>
 	</apply>
 	<apply enter="only-blue" message="You must not enter your own scorebox!">
-		<region name="red-score"/>
+	    <region name="red-score"/>
 	</apply>
 	<apply enter="only-red" message="You must not enter the enemy spawn!">
-		<region name="red-spawn"/>
+	    <region name="red-spawn"/>
 	</apply>
 	<apply enter="only-blue" message="You must not enter the enemy spawn!">
-		<region name="blue-spawn"/>
+	    <region name="blue-spawn"/>
 	</apply>
 	<apply block="deny-all" message="You may not interact with blocks outside the playing field.">
-        <negative>
-            <region name="play"/>
-        </negative>
-    </apply>
+            <negative>
+                <region name="play"/>
+            </negative>
+        </apply>
 </regions>
 <kits>
-	<kit name="spawn">
-		<item slot="1" amount="8">baked potato</item>
-	</kit>
-	<kit name="red" parents="spawn">
-		<chestplate color="cd0000" damage="-3000">leather chestplate</chestplate>
-		<helmet color="cd0000" damage="-3000">leather helmet</helmet>
-		<leggins color="cd0000" enchantment="protection projectile:1" damage="-3000">lether leggins</leggins>
-		<boots color="cd0000" damage="-3000">leather boots</boots>
-	</kit>
+    <kit name="spawn">
+	<item slot="1" amount="8">baked potato</item>
+    </kit>
+    <kit name="red" parents="spawn">
+	<chestplate color="cd0000" damage="-3000">leather chestplate</chestplate>
+	<helmet color="cd0000" damage="-3000">leather helmet</helmet>
+	<leggins color="cd0000" enchantment="protection projectile:1" damage="-3000">lether leggins</leggins>
+	<boots color="cd0000" damage="-3000">leather boots</boots>
+    </kit>
 	<kit name="blue" parents="spawn">
-		<chestplate color="0066c" damage="-3000">leather chestplate</chestplate>
-		<helmet color="0066c" damage="-3000">leather helmet</helmet>
-		<leggins color="0066c" enchantment="protection projectile:1" damage="-3000">lether leggins</leggins>
-		<boots color="0066c" damage="-3000">leather boots</boots>
+	    <chestplate color="0066c" damage="-3000">leather chestplate</chestplate>
+	    <helmet color="0066c" damage="-3000">leather helmet</helmet>
+	    <leggins color="0066c" enchantment="protection projectile:1" damage="-3000">lether leggins</leggins>
+	    <boots color="0066c" damage="-3000">leather boots</boots>
 	</kit>
 </kits>
 <spawns>
@@ -67,27 +67,27 @@
 </spawns>
 <filters>
     <filter name="only-red" parents="deny-all">
-	    <allow>
-		    <team>red</team>
-		</allow>
+        <allow>
+            <team>red</team>
+	</allow>
 	</filter>
 	<filter name="only-blue" parents="deny-all">
 	    <allow>
-		    <team>blue</team>
-		</allow>
+                <team>blue</team>
+	    </allow>
 	</filter>
 </filters>
 <score>
-	<limit>10</limit>
-	<box value="1" filter="only-red" region="blue-score"/>
-	<box value="1" filter="only-blue" region="red-score"/>
+    <limit>10</limit>
+    <box value="1" filter="only-red" region="blue-score"/>
+    <box value="1" filter="only-blue" region="red-score"/>
 </score>
 <portals>
-	<portal x="@-83" y="@192" z="@1152">
-		<region region="red-score"/>
-	</portal>
+    <portal x="@-83" y="@192" z="@1152">
+        <region region="red-score"/>
+    </portal>
     <portal x="@84" y="@192" z="@1152">
-		<region region="blue-score"/>
-	</portal>
+	<region region="blue-score"/>
+    </portal>
 </portals>
 </map>
