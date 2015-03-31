@@ -11,4 +11,17 @@
   <contributors>
     <contributor uuid="f97f1394-38c3-468b-885d-e8b39dc40919" contribution="XML feedback"/>
   </contributors>
+  <teams>
+    <team color="red" max="32" max-overfill="37">Red</team>
+    <team color="blue" max="32" max-overfill="37">Blue</team>
+  </teams>
+  <rules>
+    <rule>
+      [llenar esta seccion]
+    </rule>
+  </rules>
+  <kits>
+    <kit name="teams">
+    </kit>
+  </kits>
 </map>
