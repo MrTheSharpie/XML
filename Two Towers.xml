@@ -1,1 +1,14 @@
-
+<map proto ="1.3.6">
+  <name>Two Towers</name>
+  <version>1.0.2</version>
+  <objetive>
+    Capture the enemies wool and return it to your base.
+  </objetive>
+  <authors>
+    <author uuid="1e79acd3-562e-42d4-9a6c-e923f5284329" contribution="Map design and building"/>
+    <author uuid="6aa9a1e1-4743-4b80-8426-c2ebeb95b77e" contribution="Building"/>
+  </authors>
+  <contributors>
+    <contributor uuid="f97f1394-38c3-468b-885d-e8b39dc40919" contribution="XML feedback"/>
+  </contributors>
+</map>
