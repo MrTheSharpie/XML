@@ -15,13 +15,29 @@
     <team color="red" max="32" max-overfill="37">Red</team>
     <team color="blue" max="32" max-overfill="37">Blue</team>
   </teams>
-  <rules>
-    <rule>
-      [llenar esta seccion]
-    </rule>
-  </rules>
   <kits>
     <kit name="teams">
+      <item slot="0" damage="-3000">stone sword</item>
+      <item slot="1">bow</item>
+      <item slot="28" amount="64">arrow</item>
+      <item slot="2" enchantment="durability:1">iron pickaxe</item>
+      <item slot="3" enchantment="durability:1">iron spade</item>
+      <item slot="4" amount="32">cooked chicken</item>
+      <leggings damage="-3000" locked="true">iron leggings</leggings>
+      <potion duration="3">heal</potion>
+      <potion duration="3" amplifier="2">damage resistence</potion>
+    </kit>
+    <kit name="red" parents="teams">
+      <item slot="5" amount="64" damage="14">oak wood</item>
+      <helmet damage="-3000" color="cd0000" locked="true">leather helmet</helmet>
+      <chestplate damage="-3000" color="cd0000" locked="true">leather chestplate</chestplate>
+      <boots damage="-3000" color="cd0000" locked="true">leather boots</boots>
+    </kit>
+    <kit name="blue" parents="teams">
+      <item slot="5" amount="64" damage="11">oak wood</item>
+      <helmet damage="-3000" color="0066cc" locked="true">leather helmet</helmet>
+      <chestplate damage="-3000" color="0066cc" locked="true">leather chestplaye</chestplate>
+      <boots damage="-3000" color="0066cc" locked="true">leather boots</boots>
     </kit>
   </kits>
 </map>
