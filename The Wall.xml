@@ -5,7 +5,7 @@
 <objective>Be the last team with people alive!</objective>
 <authors>
     <author uuid="6aa9a1e1-4743-4b80-8426-c2ebeb95b77e" contribution="Building, Design, feedback"/> <!-- iChristian_ -->
-    <author uuid="1e79acd3-562e-42d4-9a6c-e923f5284329" contribution="Building, Design, feedback"/> <!-- Sharpie -->
+    <author uuid="1e79acd3-562e-42d4-9a6c-e923f5284329" contribution="Building, Design, feedback, XML"/> <!-- Sharpie -->
 </authors>
 <contributors>
     <contributor uuid="dffd0b74-69e6-49d6-9607-59d61bea9460" contribution="Building"/>
