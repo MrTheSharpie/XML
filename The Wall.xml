@@ -13,8 +13,8 @@
     <contributor uuid="bdb417b7-8d57-460f-951e-69dfaf764430" contribution="Map idea"/>
 </contributors>
 <teams>
-    <team id="nw" color="black" max="8" max-overfill="10" respawn-limit="1">Night Watch</team>
-    <team id="ww" color="white" max="8" max-overfill="10" respawn-limit="0">White Walkers</team>
+    <team id="nw" color="black" max="6" max-overfill="6" respawn-limit="1">Night Watch</team>
+    <team id="ww" color="white" max="4" max-overfill="4" respawn-limit="0">White Walkers</team>
     <team id="wl" color="gray" max="8" max-overfill="10" respawn-limit="3">Wildlings</team>
 </teams>
 <kits>
