@@ -53,7 +53,7 @@
 </kits>
 <blitz>
     <time>15m</time>
-    <lives>4</lives>
+    <lives>2</lives>
     <broadcastLives>true</broadcastLives>
 </blitz>
 <spawns>
