@@ -13,15 +13,15 @@
     <contributor uuid="bdb417b7-8d57-460f-951e-69dfaf764430" contribution="Map idea"/>
 </contributors>
 <teams>
-    <team id="nw" color="black" max="6" max-overfill="6" respawn-limit="1">Night Watch</team>
-    <team id="ww" color="white" max="4" max-overfill="4" respawn-limit="0">White Walkers</team>
-    <team id="wl" color="gray" max="8" max-overfill="10" respawn-limit="3">Wildlings</team>
+    <team id="night-watch" color="black" max="8" max-overfill="10" respawn-limit="1">Night Watch</team>
+    <team id="white-walkers" color="white" max="8" max-overfill="10" respawn-limit="0">White Walkers</team>
+    <team id="wildlings" color="gray" max="8" max-overfill="10" respawn-limit="3">Wildlings</team>
 </teams>
 <kits>
-    <kit name="spawn" force="false">
+    <kit name="spawn" force="true">
         <item slot="8" amount="32">bread</item>
     </kit>
-    <kit name="nw" parents="spawn">
+    <kit name="night-watch" parents="spawn">
         <item slot="0" damage="-3000" enchantment="damage all">stone sword</item>
         <item slot="1" damage="-3000">bow</item>
         <item slot="9" amount="32">arrow</item>
@@ -30,7 +30,7 @@
         <leggings damage="-3000" color="191919">leather leggings</leggings>
         <boots damage="-3000" color="191919">leather boots</boots>
     </kit>
-    <kit name="ww" parents="spawn">
+    <kit name="white-walkers" parents="spawn">
         <item slot="0" damage="-3000" enchantment="damage all">iron sword</item>
         <helmet damage="-3000" color="FFFFF">leather helmet</helmet>
         <chestplate damage="-3000">iron chestplate</chestplate>
@@ -40,7 +40,7 @@
         <potion duration="oo" amplifier="2">slow digging</potion>
         <potion duration="oo" amplifier="2">slow</potion>
     </kit>
-    <kit name="wl" parents="spawn">
+    <kit name="wildlings" parents="spawn">
         <item slot="0" damage="-3000">stone axe</item>
         <item slot="1" damage="-3000" enchantment="arrow damage:2">bow</item>
         <item slot="9" amount="64">arrow</item>
@@ -57,19 +57,19 @@
     <broadcastLives>true</broadcastLives>
 </blitz>
 <spawns>
-    <spawn team="nw" kit="nw">
+    <spawn team="night-watch" kit="night-watch">
         <regions yaw="90">
-            <cuboid min="13,8,20" max="19,15,24"/>
+            <cuboid min="15,11,21" max="16,11,22"/>
         </regions>
     </spawn>
-    <spawn team="wl" kit="wl">
+    <spawn team="wildlings" kit="wildlings">
         <regions yaw="-50">
-            <cuboid min="-58,9,-64" max="-52,15,-58"/>
+            <cuboid min="-55,11,-61" max="-54,11,-60"/>
         </regions>
-    </spawn>
-    <spawn team="ww" kit="ww">
+	</spawn>
+    <spawn team="white-walkers" kit="white-walkers">
         <regions yaw="50">
-            <cuboid min="51,9,-64" max="57,15,-58"/>
+            <cuboid min="54,11,-61" max="55,11,-60"/>
         </regions>
     </spawn>
     <default>
@@ -101,5 +101,3 @@
     <item>chainmail chestplate</item>
 </itemremove>
 </map>
-
-    
