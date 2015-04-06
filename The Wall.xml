@@ -51,3 +51,54 @@
         <potion duration="oo" amplifier="2">speed</potion>
     </kit>
 </kits>
+<blitz>
+    <time>15m</time>
+    <lives>4</lives>
+    <broadcastLives>true</broadcastLives>
+</blitz>
+<spawns>
+    <spawn team="nw" kit="nw">
+        <regions yaw="90">
+            <cuboid min="13,8,20" max="19,15,24"/>
+        </regions>
+    </spawn>
+    <spawn team="wl" kit="wl">
+        <regions yaw="-50">
+            <cuboid min="-58,9,-64" max="-52,15,-58"/>
+        </regions>
+    <spawn team="ww" kit="ww">
+        <regions yaw="50">
+            <cuboid min="51,9,-64" max="57,15,-58"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="0">
+            <cuboid min="-1,43,-1" max="2,45,2"/>
+        </regions>
+    </default>
+</spawns>
+<regions>
+    <rectangle name="play" min="-60,-64" max="60,40"/>
+    <apply block="deny-players">
+        <region name="play"/>
+    </apply>
+</regions>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>stone axe</tool>
+    <tool>stone sword</tool>
+    <tool>bow</tool>
+</toolrepair>
+<itemremove>
+    <item>bread</item>
+    <item>leather helmet</item>
+    <item>leather leggings</item>
+    <item>leather chestplate</item>
+    <item>leather boots</item>
+    <item>iron leggings</item>
+    <item>iron chestplate</item>
+    <item>chainmail chestplate</item>
+</itemremove>
+</map>
+
+    
