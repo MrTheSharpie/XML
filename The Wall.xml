@@ -12,3 +12,42 @@
     <contributor uuid="0fa5f9b7-c11d-4f27-9b7a-3886db4faa4c" contribution="Building"/>
     <contributor uuid="bdb417b7-8d57-460f-951e-69dfaf764430" contribution="Map idea"/>
 </contributors>
+<teams>
+    <team id="nw" color="black" max="8" max-overfill="10" respawn-limit="1">Night Watch</team>
+    <team id="ww" color="white" max="8" max-overfill="10" respawn-limit="0">White Walkers</team>
+    <team id="wl" color="gray" max="8" max-overfill="10" respawn-limit="3">Wildlings</team>
+</teams>
+<kits>
+    <kit name="spawn" force="false">
+        <item slot="8" amount="32">bread</item>
+    </kit>
+    <kit name="nw" parents="spawn">
+        <item slot="0" damage="-3000" enchantment="damage all">stone sword</item>
+        <item slot="1" damage="-3000">bow</item>
+        <item slot="9" amount="32">arrow</item>
+        <helmet damage="-3000" color="191919">leather helmet</helmet>
+        <chestplate damage="-3000">chainmail chestplate</chestplate>
+        <leggings damage="-3000" color="191919">leather leggings</leggins>
+        <boots damage="-3000" color="191919">leather boots</boots>
+    </kit>
+    <kit name="ww" parents="spawn">
+        <item slot="0" damage="-3000" enchantment="damage all">iron sword</item>
+        <helmet damage="-3000" color="FFFFF">leather helmet</helmet>
+        <chestplate damage="-3000">iron chestplate</chestplate>
+        <leggings damage="-3000">iron leggings</leggings>
+        <boots damage="-3000" color="FFFFF">leather boots</boots>
+        <potion duration="oo" amplifier="1">damage resistance</potion>
+        <potion duration="oo" amplifier="2">slow digging</potion>
+        <potion duration="oo" amplifier="2">slow</potion>
+    </kit>
+    <kit name="wl" parents="spawn">
+        <item slot="0" damage="-3000">stone axe</item>
+        <item slot="1" damage="-3000" enchantment="arrow damage:2">bow</item>
+        <item slot="9" amount="64">arrow</item>
+        <helmet damage="-3000" color="4C4C4C">leather helmet</helmet>
+        <chestplate damage="-3000" color="4C4C4C">leather chestplate</chestplate>
+        <leggings damage="-3000" color="4C4C4C">leather leggings</leggings>
+        <boots damage="-3000" color="4C4C4C">leather boots</boots>
+        <potion duration="oo" amplifier="2">speed</potion>
+    </kit>
+</kits>
