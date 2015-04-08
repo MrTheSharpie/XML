@@ -22,8 +22,8 @@
         <item slot="8" amount="32">bread</item>
     </kit>
     <kit name="night-watch" parents="spawn">
-        <item slot="0" damage="-3000" enchantment="damage all">stone sword</item>
-        <item slot="1" damage="-3000">bow</item>
+        <item slot="0" enchantment="damage all">stone sword</item>
+        <item slot="1">bow</item>
         <item slot="9" amount="32">arrow</item>
         <helmet damage="-3000" color="191919">leather helmet</helmet>
         <chestplate damage="-3000">chainmail chestplate</chestplate>
@@ -31,7 +31,7 @@
         <boots damage="-3000" color="191919">leather boots</boots>
     </kit>
     <kit name="white-walkers" parents="spawn">
-        <item slot="0" damage="-3000" enchantment="damage all">iron sword</item>
+        <item slot="0" enchantment="damage all">iron sword</item>
         <helmet damage="-3000" color="FFFFF">leather helmet</helmet>
         <chestplate damage="-3000">iron chestplate</chestplate>
         <leggings damage="-3000">iron leggings</leggings>
@@ -41,8 +41,8 @@
         <potion duration="oo" amplifier="2">slow</potion>
     </kit>
     <kit name="wildlings" parents="spawn">
-        <item slot="0" damage="-3000">stone axe</item>
-        <item slot="1" damage="-3000" enchantment="arrow damage:2">bow</item>
+        <item slot="0">stone axe</item>
+        <item slot="1" enchantment="arrow damage:2">bow</item>
         <item slot="9" amount="64">arrow</item>
         <helmet damage="-3000" color="4C4C4C">leather helmet</helmet>
         <chestplate damage="-3000" color="4C4C4C">leather chestplate</chestplate>
