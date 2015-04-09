@@ -13,9 +13,9 @@
     <contributor uuid="bdb417b7-8d57-460f-951e-69dfaf764430" contribution="Map idea"/>
 </contributors>
 <teams>
-    <team id="night-watch" color="black" max="6" max-overfill="6">Night Watch</team>
-    <team id="white-walkers" color="white" max="4" max-overfill="4">White Walkers</team>
-    <team id="wildlings" color="gray" max="8" max-overfill="8">Wildlings</team>
+    <team id="night-watch" color="black" max="6">Night Watch</team>
+    <team id="white-walkers" color="white" max="4">White Walkers</team>
+    <team id="wildlings" color="gray" max="8">Wildlings</team>
 </teams>
 <kits>
     <kit name="spawn" force="true">
