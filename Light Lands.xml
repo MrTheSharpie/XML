@@ -15,8 +15,8 @@
 <teams>
     <team color="dark red" max="25">Red</team>
     <team color="blue" max="25">Blue</team>
-  </teams>
-  <kits>
+</teams>
+<kits>
     <kit name="spawn">
       <item slot="0" damage="-3000">iron sword</item>
       <item slot="1" damage="-3000" enchantment="arrow infinite:1">bow</item>
@@ -38,8 +38,8 @@
       <leggings color="334CB2" damage="-3000">leather leggings</leggings>
       <boots color="334CB2" damage="-3000">leather boots</boots>
     </kit>
-  </kits>
-  <toolrepair>
+</kits>
+<toolrepair>
     <tool>iron sword</tool>
     <tool>bow</tool>
 </toolrepair>
@@ -90,12 +90,16 @@
         <region="red-spawn"/>
         <region="blue-spawn"/>
     </union>
-    <union name="fields"/>
+    <union name="fields">
         <region="blue-field"/>
         <region="red-field"/>
     </union>
-    <union name="red-woolrooms"/>
+    <union name="red-woolrooms">
         <region="magenta-wool"/>
         <region="pink-wool"/>
+    </union>
+    <union name="blue-woolrooms">
+        <region="yellow-wool"/>
+        <region="lime-wool"/>
     </union>
 
