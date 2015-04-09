@@ -39,4 +39,53 @@
       <boots color="334CB2" damage="-3000">leather boots</boots>
     </kit>
   </kits>
+  <toolrepair>
+    <tool>iron sword</tool>
+    <tool>bow</tool>
+</toolrepair>
+<itemremove>
+    <item>arrow</item>
+    <item>golden carrot</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>leather leggings</item>
+    <item>leather boots</item>
+    <item>glass</item>
+    <item>log</item>
+</itemremove>
+<killreward>
+    <item>golden apple</item>
+</killreward>
+<gamerules>
+    <doDaylightCycle>false</doDaylightCycle>
+</gamerules>
+<maxbuildheight>40</maxbuildheight>
+<filters>
+    <filter name="no-void">
+        <not>
+            <void/>
+        </not>
+    </filter>
+    <filter name="only-blue">
+        <deny-players>
+            <team>red</team>
+        </deny-players>
+    </filter>
+    <filter name="only-red">
+        <deny-players>
+            <team>blue</team>
+        </deny-players>
+    </filter>
+    
+</filters>
+<regions>
+    <cuboid name="red-spawn" min="62,21,-28" max="103,30,-9"/>
+    <cuboid name="blue-spawn" min="-119,21,-29" max="-77,30,-9"/>
+    <rectangle name="blue-field" min="-130,-70" max="-24,32"/>
+    <rectangle name="red-field" min="9,-70" max="115,32"/>
+    <rectangle name="magenta-wool" min="95,-70" max="115,-51"/>
+    <rectangle name="pink-wool" min="95,13" max="115,32"/>
+    <rectangle name="yellow-wool" min="-130,13" max="-110,32"/>
+    <rectangle name="lime-wool" min="-130,-70" max="-110,-51"7/>
+    <apply
 
