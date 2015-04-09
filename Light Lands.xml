@@ -67,16 +67,15 @@
         </not>
     </filter>
     <filter name="only-blue">
-        <deny-players>
+        <not>
             <team>red</team>
-        </deny-players>
+        </not>
     </filter>
     <filter name="only-red">
-        <deny-players>
+        <not>
             <team>blue</team>
-        </deny-players>
+        </not>
     </filter>
-    
 </filters>
 <regions>
     <cuboid name="red-spawn" min="62,21,-28" max="103,30,-9"/>
@@ -87,5 +86,16 @@
     <rectangle name="pink-wool" min="95,13" max="115,32"/>
     <rectangle name="yellow-wool" min="-130,13" max="-110,32"/>
     <rectangle name="lime-wool" min="-130,-70" max="-110,-51"7/>
-    <apply
+    <union name="spawns">
+        <region="red-spawn"/>
+        <region="blue-spawn"/>
+    </union>
+    <union name="fields"/>
+        <region="blue-field"/>
+        <region="red-field"/>
+    </union>
+    <union name="red-woolrooms"/>
+        <region="magenta-wool"/>
+        <region="pink-wool"/>
+    </union>
 
