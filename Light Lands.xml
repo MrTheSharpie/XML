@@ -110,12 +110,12 @@
 <regions>
     <cuboid name="red-spawn" min="62,14,-28" max="103,25,-9"/>
     <cuboid name="blue-spawn" min="-119,14,-29" max="-77,25,-9"/>
-    <rectangle name="blue-field" min="-130,-70" max="-24,32"/>
-    <rectangle name="red-field" min="9,-70" max="115,32"/>
-    <rectangle name="magenta-wool" min="95,-70" max="115,-51"/>
-    <rectangle name="pink-wool" min="95,13" max="115,32"/>
-    <rectangle name="yellow-wool" min="-130,13" max="-110,32"/>
-    <rectangle name="lime-wool" min="-130,-70" max="-110,-51"/>
+    <rectangle name="blue-field" min="-110,-70" max="-51,32"/>
+    <rectangle name="red-field" min="36,-70" max="95,32"/>
+    <rectangle name="magenta-wool" min="96,-70" max="115,-51"/>
+    <rectangle name="pink-wool" min="96,13" max="115,32"/>
+    <rectangle name="yellow-wool" min="-130,13" max="-111,32"/>
+    <rectangle name="lime-wool" min="-130,-70" max="-111,-51"/>
     <union name="spawns">
         <region name="red-spawn"/>
         <region name="blue-spawn"/>
