@@ -16,6 +16,23 @@
     <team color="dark red" max="25">Red</team>
     <team color="blue" max="25">Blue</team>
 </teams>
+<spawns>
+    <spawn team="red" kit="red">
+        <regions yaw="90">
+            <cuboid min="72,22,-21" max="77,24,-16"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions yaw="-90">
+            <cuboid min="-92,22,-21" max="-87,24,-16"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="0">
+            <cuboid min="-4,25,-16" max="-4,35,-16"/>
+        </regions>
+    </default>
+</spawns>
 <kits>
     <kit name="spawn">
       <item slot="0" damage="-3000">iron sword</item>
@@ -39,6 +56,13 @@
       <boots color="334CB2" damage="-3000">leather boots</boots>
     </kit>
 </kits>
+<renewables>
+    <renewable rate="2" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region name="spawns"/>
+        <!-- These are the blocks that will renew -->
+        <renew>iron block</renew>
+    </renewable>
+</renewables>
 <toolrepair>
     <tool>iron sword</tool>
     <tool>bow</tool>
@@ -76,10 +100,16 @@
             <team>blue</team>
         </not>
     </filter>
+    <filter name="only-iron">
+      <block>iron block</block>
+    </filter>
+    <filter name="only-wool">
+      <block>wool</block>
+    </filter>
 </filters>
 <regions>
-    <cuboid name="red-spawn" min="62,21,-28" max="103,30,-9"/>
-    <cuboid name="blue-spawn" min="-119,21,-29" max="-77,30,-9"/>
+    <cuboid name="red-spawn" min="62,19,-28" max="103,30,-9"/>
+    <cuboid name="blue-spawn" min="-119,19,-29" max="-77,30,-9"/>
     <rectangle name="blue-field" min="-130,-70" max="-24,32"/>
     <rectangle name="red-field" min="9,-70" max="115,32"/>
     <rectangle name="magenta-wool" min="95,-70" max="115,-51"/>
@@ -87,19 +117,60 @@
     <rectangle name="yellow-wool" min="-130,13" max="-110,32"/>
     <rectangle name="lime-wool" min="-130,-70" max="-110,-51"7/>
     <union name="spawns">
-        <region="red-spawn"/>
-        <region="blue-spawn"/>
+        <region name="red-spawn"/>
+        <region name="blue-spawn"/>
     </union>
     <union name="fields">
-        <region="blue-field"/>
-        <region="red-field"/>
+        <region name="blue-field"/>
+        <region name="red-field"/>
     </union>
     <union name="red-woolrooms">
-        <region="magenta-wool"/>
-        <region="pink-wool"/>
+        <region name="magenta-wool"/>
+        <region name="pink-wool"/>
     </union>
     <union name="blue-woolrooms">
-        <region="yellow-wool"/>
-        <region="lime-wool"/>
+        <region name="yellow-wool"/>
+        <region name="lime-wool"/>
     </union>
+    <!-- Applied -->
+    <apply block-break="only-iron" block-place="only-wool" message="You may only break iron blocks at spawn!">
+        <region name="spawns"/>
+    </apply>
+    <apply enter="only-blue" message="You may not enter here!">
+        <region name="blue-spawn"/>
+        <region name="red-woolrooms"/>
+    </apply>
+    <apply enter="only-red" message="You may not enter here!">
+        <region name="red-spawn"/>
+        <region name="blue-woolrooms"/>
+    </apply>
+    <apply block-place="only-red" block-break="only-red">
+        <region name="blue-woolrooms"/>
+    </apply>
+    <apply block-place="only-blue" block-break="only-blue">
+        <region name="red-woolrooms"/>
+    </apply>
+    <apply block="no-void" message="You may not build in the void!">
+        <region name="fields"/>
+    </apply>
+</regions>
+<wools team="red">
+    <wool color="yellow" location="-120.5,17,-23">
+        <monument><block>66.5,23,-21.5</block></monument>
+    </wool>
+    <wool color="lime" location="-120.5,17,-61">
+        <monument><block>66.5,23,-16.5</block></monument>
+    </wool>
+</wools>
+<wools team="blue">
+    <wool color="magente" location="despues sigo">
+        <monument><block>despues sigo</block></monument>
+    </wool>
+    <wool color="pink" location="despues sigo">
+        <monument><block>despues sigo</block></monument>
+    </wool>
+</wools>
+
+
+    
 
