@@ -106,6 +106,9 @@
     <filter name="only-wool">
       <block>wool</block>
     </filter>
+    <filter name="only-cobweb">
+      <block>cobweb</block>
+    </filter>
 </filters>
 <regions>
     <cuboid name="red-spawn" min="62,14,-28" max="103,25,-9"/>
@@ -148,10 +151,10 @@
         <region name="red-spawn"/>
         <region name="blue-woolrooms"/>
     </apply>
-    <apply block-place="only-red" block-break="only-red">
+    <apply block-place="only-red" block-break="only-cobweb">
         <region name="blue-woolrooms"/>
     </apply>
-    <apply block-place="only-blue" block-break="only-blue">
+    <apply block-place="only-blue" block-break="only-cobweb">
         <region name="red-woolrooms"/>
     </apply>
     <apply block="no-void" message="You may not build in the void!">
@@ -175,7 +178,3 @@
     </wool>
 </wools>
 </map>
-
-
-    
-
