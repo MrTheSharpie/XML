@@ -115,7 +115,7 @@
     <rectangle name="magenta-wool" min="95,-70" max="115,-51"/>
     <rectangle name="pink-wool" min="95,13" max="115,32"/>
     <rectangle name="yellow-wool" min="-130,13" max="-110,32"/>
-    <rectangle name="lime-wool" min="-130,-70" max="-110,-51"7/>
+    <rectangle name="lime-wool" min="-130,-70" max="-110,-51"/>
     <union name="spawns">
         <region name="red-spawn"/>
         <region name="blue-spawn"/>
@@ -163,13 +163,14 @@
     </wool>
 </wools>
 <wools team="blue">
-    <wool color="magente" location="despues sigo">
-        <monument><block>despues sigo</block></monument>
+    <wool color="magenta" location="105.5,17,-60">
+        <monument><block>-81.5,23,-16.5</block></monument>
     </wool>
-    <wool color="pink" location="despues sigo">
-        <monument><block>despues sigo</block></monument>
+    <wool color="pink" location="105.5,17,22">
+        <monument><block>-81.5,23,-21.5</block></monument>
     </wool>
 </wools>
+</map>
 
 
     
