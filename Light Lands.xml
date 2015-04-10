@@ -19,12 +19,12 @@
 <spawns>
     <spawn team="red" kit="red">
         <regions yaw="90">
-            <cuboid min="72,22,-21" max="77,24,-16"/>
+            <cuboid min="72,17,-21" max="77,19,-16"/>
         </regions>
     </spawn>
     <spawn team="blue" kit="blue">
         <regions yaw="-90">
-            <cuboid min="-92,22,-21" max="-87,24,-16"/>
+            <cuboid min="-92,17,-21" max="-87,19,-16"/>
         </regions>
     </spawn>
     <default>
@@ -83,7 +83,7 @@
 <gamerules>
     <doDaylightCycle>false</doDaylightCycle>
 </gamerules>
-<maxbuildheight>40</maxbuildheight>
+<maxbuildheight>35</maxbuildheight>
 <filters>
     <filter name="no-void">
         <not>
@@ -108,8 +108,8 @@
     </filter>
 </filters>
 <regions>
-    <cuboid name="red-spawn" min="62,19,-28" max="103,30,-9"/>
-    <cuboid name="blue-spawn" min="-119,19,-29" max="-77,30,-9"/>
+    <cuboid name="red-spawn" min="62,14,-28" max="103,25,-9"/>
+    <cuboid name="blue-spawn" min="-119,14,-29" max="-77,25,-9"/>
     <rectangle name="blue-field" min="-130,-70" max="-24,32"/>
     <rectangle name="red-field" min="9,-70" max="115,32"/>
     <rectangle name="magenta-wool" min="95,-70" max="115,-51"/>
@@ -120,7 +120,7 @@
         <region name="red-spawn"/>
         <region name="blue-spawn"/>
     </union>
-    <union name="fields">
+    <union name="fields-brute">
         <region name="blue-field"/>
         <region name="red-field"/>
     </union>
@@ -132,6 +132,10 @@
         <region name="yellow-wool"/>
         <region name="lime-wool"/>
     </union>
+    <complement name="fields">
+        <region name="fields-brute"/>
+        <region name="spawns"/>
+    </complement>
     <!-- Applied -->
     <apply block-break="only-iron" block-place="only-wool" message="You may only break iron blocks at spawn!">
         <region name="spawns"/>
@@ -155,19 +159,19 @@
     </apply>
 </regions>
 <wools team="red">
-    <wool color="yellow" location="-120.5,17,-23">
-        <monument><block>66.5,23,-21.5</block></monument>
+    <wool color="yellow" location="-120.5,12,-23">
+        <monument><block>66.5,18,-21.5</block></monument>
     </wool>
-    <wool color="lime" location="-120.5,17,-61">
-        <monument><block>66.5,23,-16.5</block></monument>
+    <wool color="lime" location="-120.5,12,-61">
+        <monument><block>66.5,18,-16.5</block></monument>
     </wool>
 </wools>
 <wools team="blue">
-    <wool color="magenta" location="105.5,17,-60">
-        <monument><block>-81.5,23,-16.5</block></monument>
+    <wool color="magenta" location="105.5,12,-60">
+        <monument><block>-81.5,18,-16.5</block></monument>
     </wool>
-    <wool color="pink" location="105.5,17,22">
-        <monument><block>-81.5,23,-21.5</block></monument>
+    <wool color="pink" location="105.5,12,22">
+        <monument><block>-81.5,18,-21.5</block></monument>
     </wool>
 </wools>
 </map>
