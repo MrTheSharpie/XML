@@ -125,21 +125,23 @@
         <region name="anti-void"/>
     </apply>
 </regions>
-<wools team="red">
-    <wool color="blue" location="-88.5,50,61.5">
-        <monument><block>57.5,19,-3.5</block></monument>
-    </wool>
-    <wool color="light-blue" location="-88.5,50,-66.5">
-        <monument><block>57.5,19,-3.5</block></monument>
-    </wool>
-</wools>
-<wools team="red">
-    <wool color="lime" location="88.5,50,61.5">
-        <monument><block>-56.5,20,-3.5</block></monument>
-    </wool>
-    <wool color="green" location="88.5,50,-66.5">
-        <monument><block>-56.5,20,-2.5</block></monument>
-    </wool>
+<wools>
+    <wools team="red">
+        <wool color="blue" location="-88.5,50,61.5">
+            <monument><block>57.5,19,-3.5</block></monument>
+        </wool>
+        <wool color="light-blue" location="-88.5,50,-66.5">
+            <monument><block>57.5,19,-3.5</block></monument>
+        </wool>
+    </wools>
+    <wools team="red">
+        <wool color="lime" location="88.5,50,61.5">
+            <monument><block>-56.5,20,-3.5</block></monument>
+        </wool>
+        <wool color="green" location="88.5,50,-66.5">
+            <monument><block>-56.5,20,-2.5</block></monument>
+        </wool>
+	</wools>
 </wools>
 <toolrepair>
     <tool>iron sword</tool>
