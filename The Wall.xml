@@ -14,8 +14,8 @@
 </contributors>
 <teams>
     <team id="night-watch" color="black" max="6">Night Watch</team>
-    <team id="white-walkers" color="white" max="4">White Walkers</team>
-    <team id="wildlings" color="gray" max="8">Wildlings</team>
+    <team id="white-walkers" color="white" max="6">White Walkers</team>
+    <team id="wildlings" color="gray" max="6">Wildlings</team>
 </teams>
 <kits>
     <kit name="spawn" force="true">
@@ -31,24 +31,23 @@
         <boots damage="-3000" color="191919">leather boots</boots>
     </kit>
     <kit name="white-walkers" parents="spawn">
-        <item slot="0" enchantment="damage all">iron sword</item>
+        <item slot="0" enchantment="damage all">stone sword</item>
+        <item slot="1">bow</item>
+        <item slot="9" amount="32">arrow</item>
         <helmet damage="-3000" color="FFFFFF">leather helmet</helmet>
-        <chestplate damage="-3000">iron chestplate</chestplate>
-        <leggings damage="-3000">iron leggings</leggings>
+        <chestplate damage="-3000">chainmail chestplate</chestplate>
+        <leggings damage="-3000" color="FFFFFF">leather leggings</leggings>
         <boots damage="-3000" color="FFFFFF">leather boots</boots>
-        <potion duration="oo" amplifier="1">damage resistance</potion>
-        <potion duration="oo" amplifier="2">slow digging</potion>
-        <potion duration="oo" amplifier="2">slow</potion>
     </kit>
     <kit name="wildlings" parents="spawn">
-        <item slot="0">stone axe</item>
-        <item slot="1" enchantment="arrow damage:2">bow</item>
-        <item slot="9" amount="64">arrow</item>
+        <item slot="0" enchantment="damage all">stone sword</item>
+        <item slot="1">bow</item>
+        <item slot="9" amount="32">arrow</item>
         <helmet damage="-3000" color="4C4C4C">leather helmet</helmet>
-        <chestplate damage="-3000" color="4C4C4C">leather chestplate</chestplate>
+        <chestplate damage="-3000">chainmail chestplate</chestplate>
         <leggings damage="-3000" color="4C4C4C">leather leggings</leggings>
         <boots damage="-3000" color="4C4C4C">leather boots</boots>
-        <potion duration="oo" amplifier="2">speed</potion>
+    </kit>
     </kit>
 </kits>
 <blitz>
