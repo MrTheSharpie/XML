@@ -1,4 +1,5 @@
-<map proto ="1.3.6">
+<?xml version="1.0"?>
+<map proto="1.3.6">
   <name>Two Towers</name>
   <version>1.0.2</version>
   <objetive>
@@ -17,14 +18,14 @@
   </teams>
   <kits>
     <kit name="teams">
-      <item slot="0" damage="-3000">stone sword</item>
+      <item slot="0" damage="-3000">iron sword</item>
       <item slot="1" enchantment="arrow infinite:1">bow</item>
       <item slot="28">arrow</item>
       <item slot="2" enchantment="durability:3;dig speed:1">iron pickaxe</item>
       <item slot="30" enchantment="durability:1">iron spade</item>
       <item slot="3">iron axe</item>
-      <item slot="4" amount="32">cooked chicken</item>
-      <leggings damage="-3000" locked="true">iron leggings</leggings>
+      <item slot="4" amount="32">golden carrot</item>
+      <leggings damage="-3000">iron leggings</leggings>
       <potion duration="3">heal</potion>
       <potion duration="3" amplifier="2">damage resistence</potion>
     </kit>
@@ -33,18 +34,129 @@
       <item slot="6" amount="64">glass</item>
       <item slot="7">bucket</item>
       <item slot="8">golden apple</item>
-      <helmet damage="-3000" color="cd0000" locked="true">leather helmet</helmet>
-      <chestplate damage="-3000" color="cd0000" locked="true">leather chestplate</chestplate>
-      <boots damage="-3000" color="cd0000" locked="true">leather boots</boots>
+      <helmet damage="-3000" color="cd0000">leather helmet</helmet>
+      <chestplate damage="-3000" color="cd0000">leather chestplate</chestplate>
+      <boots damage="-3000" color="cd0000">leather boots</boots>
     </kit>
     <kit name="blue" parents="teams">
       <item slot="5" amount="64" damage="14">log</item>
       <item slot="6" amount="64">glass</item>
       <item slot="7">bucket</item>
       <item slot="8">golden apple</item>
-      <helmet damage="-3000" color="0066cc" locked="true">leather helmet</helmet>
-      <chestplate damage="-3000" color="0066cc" locked="true">leather chestplaye</chestplate>
-      <boots damage="-3000" color="0066cc" locked="true">leather boots</boots>
+      <helmet damage="-3000" color="0066cc">leather helmet</helmet>
+      <chestplate damage="-3000" color="0066cc">leather chestplate</chestplate>
+      <boots damage="-3000" color="0066cc">leather boots</boots>
     </kit>
   </kits>
+  <spawns>
+    <spawn team="red" kit="red">
+        <regions yaw="90">
+            <cuboid min="100,9,-4" max="102,9,-1"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions yaw="-90">
+            <cuboid min="-101,9,-4" max="-99,9,-1"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="0">
+            <cuboid min="0,10,0" max="0,10,0"/>
+        </regions>
+    </default>
+</spawns>
+<filters>
+    <filter name="no-void">
+        <not>
+            <void/>
+        </not>
+    </filter>
+    <filter name="only-blue">
+        <not>
+            <team>red</team>
+        </not>
+    </filter>
+    <filter name="only-red">
+        <not>
+            <team>blue</team>
+        </not>
+    </filter>
+    <filter name="only-wool">
+      <block>wool</block>
+    </filter>
+    <filter name="only-cobweb">
+      <block>cobweb</block>
+    </filter>
+</filters>
+<regions>
+    <rectangle name="red-spawn" min="93,-9" max="106,3"/>
+    <rectangle name="blue-spawn" min="-105,-9" max="-92,3"/>
+    <rectangle name="blue-side" min="-104,-59" max="-17,53"/>
+    <rectangle name="red-side" min="18,-59" max="105,53"/>
+    <rectangle name="lime-wool" min="79,53" max="97,66"/>
+    <rectangle name="green-wool" min="79,-73" max="97,-60"/>
+    <rectangle name="light-blue-wool" min="-96,-73" max="-78,-60"/>
+    <rectangle name="blue-wool" min="-96,54" max="-78,67"/>
+    <union name="spawns">
+      <region name="blue-spawn"/>
+      <region name="red-spawn"/>
+    </union>
+    <union name="red-woolrooms">
+      <region name="lime-wool"/>
+      <region name="green-wool"/>
+    </union>
+    <union name="blue-woolrooms">
+      <region name="light-blue-wool"/>
+      <region name="blue-wool"/>
+    </union>
+    <union name="anti-void">
+      <region name="blue-side"/>
+      <region name="red-side"/>
+    </union>
+    <apply enter="only-blue">
+      <region name="red-woolrooms"/>
+      <region name="blue-spawn"/>
+    </apply>
+    <apply enter="only-red">
+      <region name="blue-woolrooms"/>
+      <region name="red-spawn"/>
+    </apply>
+    <apply block="deny-all" message="You may not break or place blocks in your spawn!">
+      <region name="spawns"/>
+    </apply>
+    <apply block-place="no-void">
+      <region name="anti-void"/>
+    </apply>
+</regions>
+<wools team="red">
+    <wool color="blue" location="-88.5,50,61.5">
+        <monument><block>57.5,19,-3.5</block></monument>
+    </wool>
+    <wool color="light-blue" location="-88.5,50,-66.5">
+        <monument><block>57.5,19,-3.5</block></monument>
+    </wool>
+</wools>
+<wools team="red">
+    <wool color="lime" location="88.5,50,61.5">
+        <monument><block>-56.5,20,-3.5</block></monument>
+    </wool>
+    <wool color="green" location="88.5,50,-66.5">
+        <monument><block>-56.5,20,-2.5</block></monument>
+    </wool>
+</wools>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>iron spade</tool>
+    <tool>iron pickaxe</tool>
+    <tool>iron axe</tool>
+    <tool>bow</tool>
+</toolrepair>
+<itemremove>
+    <item>arrow</item>
+    <item>golden carrot</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>iron leggings</item>
+    <item>leather boots</item>
+</itemremove>
 </map>
