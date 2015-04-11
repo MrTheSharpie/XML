@@ -22,7 +22,7 @@
         <item slot="8" amount="32">bread</item>
     </kit>
     <kit name="night-watch" parents="spawn">
-        <item slot="0" enchantment="damage all">stone sword</item>
+        <item slot="0">stone sword</item>
         <item slot="1">bow</item>
         <item slot="9" amount="32">arrow</item>
         <helmet damage="-3000" color="191919">leather helmet</helmet>
@@ -31,7 +31,7 @@
         <boots damage="-3000" color="191919">leather boots</boots>
     </kit>
     <kit name="white-walkers" parents="spawn">
-        <item slot="0" enchantment="damage all">stone sword</item>
+        <item slot="0">stone sword</item>
         <item slot="1">bow</item>
         <item slot="9" amount="32">arrow</item>
         <helmet damage="-3000" color="FFFFFF">leather helmet</helmet>
@@ -40,7 +40,7 @@
         <boots damage="-3000" color="FFFFFF">leather boots</boots>
     </kit>
     <kit name="wildlings" parents="spawn">
-        <item slot="0" enchantment="damage all">stone sword</item>
+        <item slot="0">stone sword</item>
         <item slot="1">bow</item>
         <item slot="9" amount="32">arrow</item>
         <helmet damage="-3000" color="4C4C4C">leather helmet</helmet>
