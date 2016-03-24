@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Underground Madness</name>
+<version>1.0.0</version>
+<objective>Kill as many players as you can in 5 minutes</objective>
+<authors>
+    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Your In-game name -->
+</authors>
+<rules>
+    <rule>Kill as many players as you can in 5 minutes!</rule>
+</rules>
+<score>
+    <kills>1</kills>
+</score>
+<time>5m</time>
+<players min="2" max="5" max-overfill="5" show-name-tags="false"/>
+<spawns>
+    <spawn kit="spawn-kit" spread="true">
+        <regions>
+            <point yaw="1">14.5,7,-16.5</point>
+            <point yaw="2">-2.5,7,-28.5</point>
+            <point yaw="3">-29.5,7,-2.5</point>
+            <point yaw="4">3.5,7,14.5</point>
+            <point yaw="5">18.5,7,8.5</point>
+        </regions>
+    </spawn>
+    <default yaw="x">
+        <regions>
+            <cuboid min="-5,5,-7" max="-3,6,-6"/>
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit id="spawn-kit">
+        <item slot="0" name="Sword">stone sword</item>
+        <item slot="1" name="Bow">bow</item>
+        <item slot="2" amount="8">arrow</item>
+        <helmet color="664C33" unbreakable="true" locked="true">leather helmet</helmet>
+        <chestplate color="664C33" unbreakable="true" locked="true">leather chestplate</chestplate>
+    </kit>
+</kits>
+<hunger>
+    <depletion>off</depletion>
+</hunger>
+<disabledamage>
+    <damage>suffocation</damage>
+</disabledamage>
+<respawn delay="2s" blackout="true"/>
+<regions>
+    <apply block="never" region="everywhere" message="You may not edit the map!"/>
+</regions>
+<killreward>
+    <item amount="2" material="arrow"/>
+</killreward>
+<itemremove>
+    <item>iron sword</item>
+    <item>bow</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>leather leggings</item>
+    <item>leather boots</item>
+    <item>arrow</item>
+</itemremove>
+<timelock>on</timelock>
+</map>
