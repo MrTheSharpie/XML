@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <map proto="1.4.0">
 <name>Inverted</name>
-<version>1.0.0</version>
+<version>1.0.1</version>
 <objective>Bring the wool in your inventory to your monument, located in the enemy side!</objective>
 <gamemode>ctw</gamemode>
 <authors>
@@ -37,7 +37,7 @@
         <item slot="28">arrow</item>
         <item slot="2" enchantment="durability:2">iron pickaxe</item>
         <item slot="3" enchantment="durability:1">iron axe</item>
-        <item slot="4" enchantment="durability:1">iron shovel</item>
+        <item slot="4" enchantment="durability:1">iron spade</item>
         <item slot="5" amount="32" damage="1">planks</item>
         <item slot="6" amount="8">glass</item>
         <item slot="8" amount="32">golden carrot</item>
@@ -106,14 +106,14 @@
     <tool>bow</tool>
     <tool>iron pickaxe</tool>
     <tool>iron axe</tool>
-    <tool>iron shovel</tool>
+    <tool>iron spade</tool>
 </toolrepair>
 <itemremove>
     <item>arrow</item>
     <item>leather chestplate</item>
     <item>golden carrot</item>
 </itemremove>
-<maxbuildheight>30</maxbuildheight>
+<maxbuildheight>25</maxbuildheight>
 <wools>
     <wool team="red" color="light blue" location="49.5,14,-25.5">
         <monument>
