@@ -40,15 +40,16 @@
         <item slot="4" enchantment="durability:1">iron shovel</item>
         <item slot="5" amount="32" damage="1">planks</item>
         <item slot="6" amount="8">glass</item>
-        <item slot="7" amount="2">golden apple</item>
         <item slot="8" amount="32">golden carrot</item>
         <item slot="9">bucket</item>
     </kit>
     <kit id="red-kit" parents="spawn">
         <chestplate color="993333" unbreakable="true">leather chestplate</chestplate>
+        <item slot="7" amount="6">light blue wool</item>
     </kit>
     <kit id="blue-kit" parents="spawn">
         <chestplate color="334CB2" unbreakable="true">leather chestplate</chestplate>
+        <item slot="7" amount="6">lime wool</item>
     </kit>
 </kits>
 <kill-rewards>
