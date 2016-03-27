@@ -9,6 +9,8 @@
 </authors>
 <contributors>
     <contributor uuid="a23a1d91-7e97-40b4-8f5e-1ab82d8f5ade" contribution="XML fixing"/> <!-- chle_ -->
+    <contributor uuid="9b4fbb38-ed55-44ad-b510-9f0197433f93" contribution="Provide server for testing"/> <!-- Indicado -->
+
 </contributors>
 <teams>
     <team id="blue" color="blue" max="5" max-overfill="5">Blue Team</team>
