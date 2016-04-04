@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <map proto="1.4.0">
-<name>WIP</name>
+<name>All In</name>
 <version>1.0.0</version>
 <objective>Bring the wool in your inventory to your monument, located in the enemy side!</objective>
 <gamemode>ctw</gamemode>
+<time result="objectives">20m</time>
 <authors>
     <author uuid="929d421f-b78e-43fb-bf18-3222bc801dad"/> <!-- Melonnade -->
     <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpiee_ -->
@@ -58,6 +59,10 @@
         <item amount="8" material="glass"/>
     </kill-reward>
 </kill-rewards>
+<tnt>
+    <instantignite>on</instantignite>
+    <fuse>2s</fuse>
+</tnt>
 <filters>
     <not id="no-void">
         <void/>
