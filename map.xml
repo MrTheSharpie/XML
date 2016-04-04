@@ -101,6 +101,7 @@
                 <region id="map"/>
             </complement>
         </region>
+    </apply>
 </regions>
 <toolrepair>
     <tool>iron sword</tool>
