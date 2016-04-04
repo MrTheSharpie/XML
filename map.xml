@@ -5,8 +5,8 @@
 <objective>Bring the wool in your inventory to your monument, located in the enemy side!</objective>
 <gamemode>ctw</gamemode>
 <authors>
-    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpiee_ -->
     <author uuid="929d421f-b78e-43fb-bf18-3222bc801dad"/> <!-- Melonnade -->
+    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpiee_ -->
 </authors>
 <contributors>
     <contributor uuid="2958ea4c-3501-404e-88cc-12e8632f68cc" contribution="Very important feedback"/> <!-- NixaniaXi -->
