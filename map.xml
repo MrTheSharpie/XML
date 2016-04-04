@@ -64,8 +64,11 @@
     </not>
     <team id="only-red">red</team>
     <team id="only-blue">blue</team>
-    <deny id="keep-spawner">
-    <material>mob spawner</material>
+    <deny id="deny-spawners">
+        <any>
+            <material>mob spawner</material>
+            <material>gold plate</material>
+        </any>
     </deny>
 </filters>
 <regions>
@@ -95,13 +98,7 @@
             </complement>
         </region>
     </apply>
-    <apply block="keep-spawner" message="You may not break any spawner!">
-        <region>
-            <complement>
-                <region id="map"/>
-            </complement>
-        </region>
-    </apply>
+    <apply block="deny-spawners" message="`7You may not break this spawner!" region="everywhere"/>
 </regions>
 <toolrepair>
     <tool>iron sword</tool>
