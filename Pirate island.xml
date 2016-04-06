@@ -1,1 +1,73 @@
-
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Pirate Island</name>
+<version>1.0.0</version>
+<objective>Kill as many players as you can in 5 minutes</objective>
+<authors>
+    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpiee_ -->
+</authors>
+<rules>
+    <rule>Kill as many players as you can in 5 minutes!</rule>
+</rules>
+<score>
+    <kills>1</kills>
+</score>
+<time>5m</time>
+<players min="2" max="5" max-overfill="5" show-name-tags="false"/>
+<spawns>
+    <spawn kit="spawn-kit" spread="true">
+        <regions>
+            <point yaw="0">-3.5,11,-13.5</point>
+            <point yaw="180">-0.5,11,15.5</point>
+        </regions>
+    </spawn>
+    <default yaw="x">
+        <regions>
+            <point yaw="2.5,44,-3.5"
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit id="spawn-kit">
+        <item slot="0" name="Sword">stone sword</item>
+        <item slot="1" name="Bow">bow</item>
+        <item slot="2" amount="8">arrow</item>
+        <helmet color="664C33" unbreakable="true">leather helmet</helmet>
+        <chestplate color="664C33" unbreakable="true">leather chestplate</chestplate>
+        <leggings unbreakable="true">chainmail leggings</leggings>
+        <boots color="664C33" unbreakable="true">leather boots</boots>
+    </kit>
+</kits>
+<hunger>
+    <depletion>off</depletion>
+</hunger>
+<disabledamage>
+    <damage>suffocation</damage>
+</disabledamage>
+<respawn delay="2s" blackout="true"/>
+<regions>
+    <apply block="never" region="everywhere" message="You may not edit the map!"/>
+</regions>
+<killreward>
+    <item amount="2" material="arrow"/>
+    <item amount="1" material="gold ingot"/>
+</killreward>
+<itemremove>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>chainmail leggings</item>
+    <item>leather boots</item>
+    <item>arrow</item>
+</itemremove>
+<itemkeep>
+    <item>bow</item>
+    <item>iron sword</item>
+    <item>gold ingot</item>
+</itemkeep>
+<armorkeep>
+  <item>iron chestplate</item>
+  <item>chainmail leggings</item>
+  <item>iron boots</item>
+</armorkeep>
+<timelock>on</timelock>
+</map>
