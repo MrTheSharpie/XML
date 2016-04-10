@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Broken Seasons</name>
+<version>1.0.0</version>
+<gamemode>ctf</gamemode>
+<objective>Bring the enemy flag to your spawn three times!</objective>
+<authors>
+    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpiee_ -->
+</authors>
+<teams>
+    <team id="winter" color="gray" max="12" max-overfill="16">Winter</team>
+    <team id="summer" color="dark green" max="12" max-overfill="16">Summer</team>
+</teams>
+<spawns>
+    <spawn team="winter" kit="winter-kit">
+        <regions>
+            <point yaw="180">-11.5,34,-66.5</point>
+        </regions>
+    </spawn>
+    <spawn team="summer" kit="summer-kit">
+        <regions>
+            <point yaw="0">12.5,34,66.5</point>
+        </regions>
+    </spawn>
+    <default>
+        <regions>
+            <point yaw="-90">-0.5,46,0.5</point>
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit id="spawn">
+        <item slot="0" unbreakable="true">stone sword</item>
+        <item slot="1">bow</item>
+        <item slot="8" amount="12">arrow</item>
+        <item slot="3" amount="32">vine</item>
+        <item slot="4" amount="32">golden carrot</item>
+    </kit>
+    <kit id="winter-kit" parents="spawn">
+        <chestplate color="FFFFFF" unbreakable="true">leather chestplate</chestplate>
+        <helmet color="FFFFFF" unbreakable="true">leather helmet</helmet>
+        <leggings unbreakable="true">chainmail leggings</leggings>
+    </kit>
+    <kit id="summer-kit" parents="spawn">
+        <chestplate color="667F33" unbreakable="true">leather chestplate</chestplate>
+        <helmet color="667F33" unbreakable="true">leather helmet</helmet>
+        <leggings unbreakable="true">chainmail leggings</leggings>
+    </kit>
+</kits>
+<kill-rewards>
+    <kill-reward>
+        <item amount="2" material="arrow"/>
+    </kill-reward>
+</kill-rewards>
+<filters>
+    <not id="no-void">
+        <void/>
+    </not>
+    <team id="only-winter">winter</team>
+    <team id="only-summer">summer</team>
+	<allow id="only-vine">
+        <any>
+            <material>vine</material>
+        </any>
+    </allow>
+</filters>
+<regions>
+    <rectangle id="winter-spawn" min="-16.5,-71.5" max="-6.5,-61.5"/>
+    <rectangle id="summer-spawn" min="7.5,61.5" max="17.5,61.5"/>
+    <rectangle id="map" min="oo,oo" max="-oo,-oo"/>
+    <apply enter="only-winter" block="never" message="Only Winter Team may enter here!">
+        <region>
+            <region id="winter-spawn"/>
+        </region>
+    </apply>
+    <apply enter="only-summer" block="never" message="Only Summer Team may enter here!">
+        <region>
+            <region id="summer-spawn"/>
+        </region>
+    </apply>
+    <apply block="no-void" message="You may not edit the void area!">
+        <region>
+            <complement>
+                <region id="map"/>
+            </complement>
+        </region>
+    </apply>
+    <apply block="only-vine" message="`7You may only place vines!" region="everywhere"/>
+</regions>
+<toolrepair>
+    <tool>bow</tool>
+</toolrepair>
+<itemremove>
+    <item>arrow</item>
+	<item>stone sword</item>
+    <item>leather chestplate</item>
+    <item>leather helmet</item>
+	<item>chainmail leggings</item>
+    <item>golden carrot</item>
+</itemremove>
+<maxbuildheight>45</maxbuildheight>
+<score>
+    <limit>3</limit>
+</score>
+<flags>
+    <flag id="summer-flag" name="Blue Flag" owner="summer-team">
+        <post pickup-filter="winter-only">15,36,78</post>
+    </flag>
+    <flag id="winter-flag" name="Red Flag" owner="blue-team">
+        <post pickup-filter="summer-only">16,36,-78</post>
+    </flag>
+    <flags points="1">
+        <net region="winter-spawn" flag="summer-flag"/>
+        <net region="summer-spawn" flag="winter-flag"/>
+    </flags>
+</flags>
+</map>
