@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Sky Games</name>
+<version>1.0.0</version>
+<game-mode>Arcade</game-mode>
+<objective>Be the last team alive!</objective>
+<include src="void-death.xml"/>
+<include src="blitz-global.xml"/>
+<!-- Map authors & contributors. -->
+<authors>
+    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpiee_ -->
+</authors>
+<!-- Map modules, i.e. objectives, regions, spawns. -->
+<time>5m</time>
+<blitz>
+    <lives>1</lives>
+    <broadcastLives>false</broadcastLives>
+</blitz>
+<teams>
+   <team id="red" color="dark red" max="2" max-overfill="2">Red</team>
+   <team id="blue" color="blue" max="2" max-overfill="2">Blue</team>
+   <team id="yellow" color="blue" max="2" max-overfill="2">Yellow</team>
+   <team id="green" color="green" max="2" max-overfill="2">Green</team>
+</teams>
+<kits>
+    <kit id="spawn" force="true">
+        <item slot="2" enchantment="durability:2">stone pickaxe</item>
+		<item slot="1" enchantment="durability:2">wooden axe</item>
+		<item slot="0" enchantment="knockback:2">stick</item>
+        <effect duration="4" amplifier="10">blindness</effect>
+		<effect duration="4" amplifier="10">slowness</effect>
+		<double-jump recharge-before-landing="false" power="5" recharge-time="5.5s"/>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="red" kit="spawn">
+        <regions>
+            <point yaw="-90">-28.5,11,0.5</point>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="spawn">
+        <regions>
+            <point yaw="90">29.5,11,0.5</point>
+        </regions>
+    </spawn>
+	<spawn team="yellow" kit="spawn">
+        <regions>
+            <point yaw="180">0.5,11,29.5</point>
+        </regions>
+    </spawn>
+	<spawn team="green" kit="spawn">
+        <regions>
+            <point yaw="0">0.5,11,-28.5</point>
+        </regions>
+    </spawn>
+    <default>
+        <regions>
+            <point yaw="0">0.5,11,0.5</point>
+        </regions>
+    </default>
+</spawns>
+<regions>
+    <rectangle id="map" min="-32.5,-32.5" max="33.5,33.5"/>
+	<apply block="never">
+	    <region>
+		    <negative><region id="map"/></negative>
+		</region>
+	</apply>
+</regions>
+
+<!-- <regions> JUMP PADS DONT USE NOW
+     Jump Pads 
+    <apply velocity="3.0,2.0,0.0"> 
+        <region>
+            <cuboid min="9,9,-1" max="9,10,1"/>
+        </region>
+    </apply>
+    <apply velocity="-3.0,2.0,0.0"> 
+        <region>
+            <cuboid min="-9,9,-1" max="-9,10,1"/>
+        </region>
+    </apply>
+	<apply velocity="0.0,2.0,3.0"> 
+        <region>
+            <cuboid min="-1,9,9" max="1,10,9"/>
+        </region>
+    </apply>
+	<apply velocity="0.0,2.0,-3.0">
+        <region>
+            <cuboid min="-1,9,-9" max="1,10,-9"/>
+        </region>
+    </apply>
+</regions> -->
+<kill-rewards>
+    <!-- Give two emeralds for all kills -->
+    <kill-reward>
+        <item amount="1" material="golden apple"/>
+    </kill-reward>
+</kill-rewards>
+</map>
