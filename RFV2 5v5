@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Race for Victory II 5v5</name>
+<version>1.0.0</version>
+<objective>Capture the wool and bring it to your base!</objective>
+<gamemode>ctw</gamemode>
+<time result="objectives">20m</time>
+<authors>
+    <author uuid="3c7db14d-ac4b-4e35-b2c6-3b2237f382be" contribution="Original map design"/> <!-- Apple -->
+	<author uuid="25961a08-c90c-4abd-b136-dad90e89c2eb" contribution="Original map design"/> <!-- Anxuiz -->
+	<author uuid="ef4ea031-998f-4ec9-b7b6-1bdd428bcef8" contribution="Original map design"/> <!-- Plastix -->
+	<author uuid="82c796a5-c033-43be-af30-fa06496995f9" contribution="Original map design"/> <!-- H0bie -->
+	<author uuid="21863fd1-c381-42fe-a4fb-2540de7d5dd3" contribution="5v5 reconversion"/> <!-- Brokennz -->
+</authors>
+<contributors>
+    <contributor uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5" contribution="XML"/> <!-- Sharpiee_ -->
+</contributors>
+<teams>
+    <team id="blue" color="blue" max="5" max-overfill="5">Blue Team</team>
+    <team id="red" color="dark red" max="5" max-overfill="5">Red Team</team>
+</teams>
+<spawns>
+    <spawn team="red">
+        <regions>
+            <point yaw="180">0.5,4,-81.5</point>
+        </regions>
+    </spawn>
+    <spawn team="blue">
+        <regions>
+            <point yaw="0">0.5,4,0.5</point>
+        </regions>
+    </spawn>
+    <default>
+        <regions>
+            <point yaw="-90">31.5,11,-40.5</point>
+        </regions>
+    </default>
+</spawns>
+<filters>
+    <not id="no-void">
+        <void/>
+    </not>
+    <team id="only-red">red</team>
+    <team id="only-blue">blue</team>
+	<allow id="only-glass">
+        <any>
+            <material>thin glass</material>
+        </any>
+    </allow>
+</filters>
+<regions>
+    <rectangle id="lime-wool-room" min="-5.5,-125.5" max="9.5,-112.5"/>
+    <rectangle id="yellow-wool-room" min="-6.5,31.5" max="9.5,42.5"/>
+    <rectangle id="map" min="oo,oo" max="-oo,-oo"/>
+	<cuboid id="blue-spawn" min="-8.5,3,-7.5" max="9.5,9,6.5"/>
+	<cuboid id="red-spawn" min="-8.5,3,-87.5" max="9.5,9,-73.5"/> 
+    <apply enter="only-red" block="only-red" message="Only Red Team may enter here!">
+        <region>
+            <region id="yellow-wool-room"/>
+        </region>
+    </apply>
+    <apply enter="only-blue" block="only-blue" message="Only Blue Team may enter here!">
+        <region>
+            <region id="lime-wool-room"/>
+        </region>
+    </apply>
+	<apply enter="only-blue" block="only-glass" message="Don't break your own spawn!">
+	    <region>
+		    <region id="blue-spawn"/>
+		</region>
+	</apply>
+	<apply enter="only-red" block="only-glass" message="Don't break your own spawn!">
+	    <region>
+		    <region id="red-spawn"/>
+		</region>
+	</apply>
+    <apply block="no-void" message="You may not edit the void area!">
+        <region>
+            <complement>
+                <region id="map"/>
+            </complement>
+        </region>
+    </apply>
+</regions>
+<maxbuildheight>29</maxbuildheight>
+<wools>
+    <wool team="red" color="yellow" location="0.5,10,40.5">
+        <monument>
+            <block>0.5,5,-87.5</block>
+        </monument>
+    </wool>
+    <wool team="blue" color="lime" location="0.5,10,-120.5">
+        <monument>
+            <block>0.5,5,6.5</block>
+        </monument>
+    </wool>
+</wools>
+</map>
