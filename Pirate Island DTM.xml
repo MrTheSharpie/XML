@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Pirate Island: DTM</name>
+<version>1.0.0</version>
+<objective>Destroy the enemy smoke coming of their volcano!</objective>
+<gamemode>dtm</gamemode>
+<time result="objectives">20m</time>
+<authors>
+    <author uuid="e4711469-1e41-4b89-a572-ff857f2ecdc9" contribution="Map design, building and overall aesthetics improvements"/> <!-- TwilightStrike -->
+	<author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5" contribution="Map design, building and XML"/> <!-- Sharpiee_ -->
+</authors>
+<teams>
+    <team id="blue" color="blue" max="5" max-overfill="5">Blue Team</team>
+    <team id="red" color="dark red" max="5" max-overfill="5">Red Team</team>
+</teams>
+<spawns>
+    <spawn team="red" kit="red-kit">
+        <regions>
+            <point yaw="180">97.5,13,15.5</point>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue-kit">
+        <regions>
+            <point yaw="0">-20.5,13,-30.5</point>
+        </regions>
+    </spawn>
+    <default>
+        <regions>
+            <point yaw="-90">40,24,-5</point>
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit id="spawn">
+        <item slot="0" unbreakable="true">iron sword</item>
+        <item slot="1" enchantment="arrow infinite:1">bow</item>
+        <item slot="28">arrow</item>
+        <item slot="2" enchantment="durability:2">diamond pickaxe</item>
+		<item slot="3" enchantment="durability:1">iron axe</item>
+		<item slot="4" amount="2">golden apple</item>
+        <item slot="5" amount="16" damage="1">log</item>
+        <item slot="6" amount="64">glass</item>
+        <item slot="7" amount="32">golden carrot</item>
+        <item slot="8">bucket</item>
+    </kit>
+    <kit id="red-kit" parents="spawn">
+        <chestplate color="993333" unbreakable="true">leather chestplate</chestplate>
+        <helmet color="993333" unbreakable="true">leather helmet</helmet>
+    </kit>
+    <kit id="blue-kit" parents="spawn">
+        <chestplate color="334CB2" unbreakable="true">leather chestplate</chestplate>
+        <helmet color="334CB2" unbreakable="true">leather helmet</helmet>
+    </kit>
+</kits>
+<filters>
+    <not id="no-void">
+        <void/>
+    </not>
+    <team id="only-red">red</team>
+    <team id="only-blue">blue</team>
+</filters>
+<regions>
+    <rectangle id="map" min="oo,oo" max="-oo,-oo"/>
+	<!--<cuboid id="blue-spawn" min="-95.5,1,-13.5" max="-77.5,20,15.5"/>
+	<cuboid id="red-spawn" min="78.5,1,-13.5" max="96.5,20,15.5"/>-->
+	<!--<apply enter="only-blue" block="only-blue" message="Don't enter or break the enemy spawn!">
+	    <region>
+		    <region id="blue-spawn"/>
+		</region>
+	</apply>
+	<apply enter="only-red" block="only-red" message="Don't enter or break the enemy spawn!">
+	    <region>
+		    <region id="red-spawn"/>
+		</region>
+	</apply>-->
+    <apply block="no-void" message="You may not edit the void area!">
+        <region>
+            <complement>
+                <region id="map"/>
+            </complement>
+        </region>
+    </apply>
+</regions>
+<destroyables name="Smoke cloud" materials="obsidian;wool;stained_glass" completion="100%">
+    <destroyable owner="blue">
+       <region><cuboid min="-3,20,-6" max="5,36,0"/></region>
+    </destroyable>
+    <destroyable owner="red">
+       <region><cuboid min="71,20,-15" max="79,36,-9"/></region>
+    </destroyable>
+</destroyables>
+<modes>
+    <mode after="15m" material="web" name="`eWHITE SMOKE MODE"/>
+</modes>
+<timelock>on</timelock>
+</map>
