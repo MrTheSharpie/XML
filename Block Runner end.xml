@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<map proto="1.4.0" game="Block Runner">
+<name>Block Runner: End</name>
+<version>1.0</version>
+<objective>Be the first to the end!</objective>
+<gamemode>Arcade</gamemode>    
+<include src="void-death.xml"/>
+<authors>
+    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpiee_ -->
+	<author uuid="d3814d5a-3d37-42f2-9db8-916846bb70ad"/> <!-- breadandcinnamon -->
+</authors>
+<contributors>
+    <contributor uuid="e79fbdc9-627e-4dac-97a6-81a3046220d7" contribution="Original Map design, feedback, XML"/> <!-- AtlasGames -->
+	<contributor uuid="17feaec5-9616-49d8-a507-83026050dd8f" contribution="Cloudy Mapdev host"/> <!-- ShinyDialga -->
+</contributors>
+<broadcasts>
+    <alert after="2s">`6`lBlocks falling in 3 seconds</alert>
+    <alert after="3s">`6`lBlocks falling in 2 seconds</alert>
+    <alert after="4s">`6`lBlocks falling in 1 seconds</alert>
+    <alert after="5s">`6`lThe path is falling away! Run!</alert>/
+</broadcasts>
+<score>
+	<limit>50</limit>
+	<kills>0</kills>
+    <box points="50">
+        <region><cuboid id="boxWin" min="170.5,10,-0.5" max="172.5,13,1.5"/></region>
+    </box>
+</score>
+<blitz>
+    <lives>1</lives>    
+</blitz>
+<players min="8" max="8" colors="true"/>
+<regions>
+    <block id="spawnLocation">0.5,6,0.5</block>   
+</regions>
+<spawns>
+    <spawn kit="spawn">
+        <regions yaw="-90"><region id="spawnLocation"/></regions>
+    </spawn>
+    <default>
+        <regions yaw="90"><point>-7.5,17,0.53</point></regions>
+    </default>    
+</spawns>
+<kits>
+	<kit id="spawn">
+		<game-mode>adventure</game-mode>
+		<helmet damage="5">skull</helmet> <!-- is it skull with damage 5 or is dragon head enough? -->
+	</kit>
+</kits>
+<regions>
+    <cuboid id="mon" min="-3,3,-1" max="-1,5,1"/>
+</regions>
+<structures>
+    <structure id="mon-struct" region="mon" air="false"/>
+    <dynamic structure="mon-struct" offset="0,0,0" filter="countdown"/>
+</structures>
+<filters>
+    <not id="countdown">
+        <time>5s</time>
+    </not>
+    <not id="all-blocks">
+        <material>air</material>
+    </not>
+</filters>
+<falling-blocks delay="3">
+    <rule>
+        <filter>
+            <filter id="all-blocks"/>
+        </filter>
+        <sticky>
+            <all>
+                <filter id="all-blocks"/>
+                <material>redstone block</material>
+            </all>
+        </sticky>
+    </rule>
+</falling-blocks>
+<hunger>
+    <depletion>off</depletion>
+</hunger>
+<disabledamage>
+    <damage>fall</damage>
+    <damage>entity attack</damage>
+</disabledamage>
+</map>
