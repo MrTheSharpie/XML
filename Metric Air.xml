@@ -147,6 +147,10 @@
     <cylinder id="green-woolroom" base="76.5,37,0.5" radius="6" height="5"/>
     <cylinder id="blue-woolroom" base="0.5,37,76.5" radius="6" height="5"/>
     <cylinder id="yellow-woolroom" base="0.5,37,-75.5" radius="6" height="5"/>
+    <cuboid id="left-red-jump-1" min="-60.5,27,10.5" max="-58.5,28,10.5"/>
+    <cuboid id="left-red-jump-2" min="-60.5,27,10.5" max="-60.5,28,12.5"/>
+    <!--  Top level jump pads  -->
+    <apply velocity="0, 0.8, -3">
 </regions>
 <block-drops>
     <rule trample="true">
