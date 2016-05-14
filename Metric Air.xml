@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <map proto="1.4.0">
-<name>Metric Air</name>
+<name>Metric Fly</name>
 <version>1.0.0</version>
 <include src="voith-death.xml"/>
 <objective>Capture the other team's wools and bring them back to your base!</objective>
@@ -17,8 +17,8 @@
 <teams>
    <team id="red-team" color="red" max="7" max-overfill="10">Red</team>
    <team id="blue-team" color="blue" max="7" max-overfill="10">Blue</team>
-   <team id="yellow-team" color="yellow" max="7" max-overfill="10">Blue</team>
-   <team id="green-team" color="green" max="7" max-overfill="10">Blue</team>
+   <team id="yellow-team" color="yellow" max="7" max-overfill="10">Yellow</team>
+   <team id="green-team" color="green" max="7" max-overfill="10">Green</team>
 </teams>
 <rage/>
 <kits>
@@ -102,7 +102,7 @@
             <point yaw="70">51.5,68,-18.5</point>
         </regions>
     </spawn>
-    <default>
+    <default kit="obs">
         <regions>
             <point yaw="-90">1.5,63,0.5</point>
         </regions>
