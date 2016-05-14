@@ -11,8 +11,8 @@
 <gamemode>ctw</gamemode>
 <timelock>on</timelock>
 <broadcasts>
-    <tip after="30s">Use double jump while flying!</tip>
-    <alert after="35sm">Watch out! You'll be killed in one hit.</alert>
+    <tip after="5s">Use double jump while flying!</tip>
+    <alert after="7s">Watch out! You'll be killed in one hit.</alert>
 </broadcasts>
 <teams>
    <team id="red-team" color="red" max="7" max-overfill="10">Red</team>
