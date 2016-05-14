@@ -1,1 +1,52 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Metric Air</name>
+<version>1.0.0</version>
+<objective>Capture the other team's wools and bring them back to your base!</objective>
+<authors>
+    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- shaarpie -->
+</authors>
+<gamemode>rage</gamemode>
+<gamemode>ctw</gamemode>
+<include src="voith-death.xml"/>
+<broadcasts>
+    <tip after="30s">Use double jump while flying!</tip>
+    <alert after="35sm">Watch out! You'll be killed in one hit.</alert>
+</broadcasts>
+<teams>
+   <team id="red-team" color="red" max="7" max-overfill="10">Red</team>
+   <team id="blue-team" color="blue" max="7" max-overfill="10">Blue</team>
+   <team id="yellow-team" color="yellow" max="7" max-overfill="10">Blue</team>
+   <team id="green-team" color="green" max="7" max-overfill="10">Blue</team>
+</teams>
+<rage/>
+<kits>
+    <kit id="obs">
+      <potion duration="oo" amplifier="1">night vision</potion>
+    </kit>
+    <kit id="spawn">
+        <item slot="0" name="`aDagger" unbreakable="true" enchantment="damage all:10">stone sword</item>
+        <item slot="1" name="`bAK-99" unbreakable="true" enchantment="arrow damage:10">bow</item>
+        <item slot="8" amount="3">arrow</item>
+        <potion duration="3" amplifier="5">damage resistance</potion>
+        <potion duration="3">absorption</potion>
+        <potion duration="oo" amplifier="1">night vision</potion>
+        <walk-speed>1.8</walk-speed>
+        <double-jump recharge-before-landing="false" recharge-time="4.5s" power="7"/>
+        <chestplate unbreakable="true" locked="true">elytra</chestplate>
+    </kit>
+    <kit id="red" parents="spawn">
+        <leggings color="cd0000" material="leather leggings"/>
+    </kit>
+    <kit id="blue" parents="spawn">
+        <leggings color="0066cc" material="leather leggings"/>
+    </kit>
+    <kit id="yellow" parents="spawn">
+        <leggings color="E5E533" material="leather leggings"/>
+    </kit>
+    <kit id="green" parents="spawn">
+        <leggings color="667F33" material="leather leggings"/>
+    </kit>
+</kits>
 
+</map>
