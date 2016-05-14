@@ -2,13 +2,14 @@
 <map proto="1.4.0">
 <name>Metric Air</name>
 <version>1.0.0</version>
+<include src="voith-death.xml"/>
 <objective>Capture the other team's wools and bring them back to your base!</objective>
 <authors>
     <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- shaarpie -->
 </authors>
 <gamemode>rage</gamemode>
 <gamemode>ctw</gamemode>
-<include src="voith-death.xml"/>
+<timelock>on</timelock>
 <broadcasts>
     <tip after="30s">Use double jump while flying!</tip>
     <alert after="35sm">Watch out! You'll be killed in one hit.</alert>
@@ -47,6 +48,196 @@
     <kit id="green" parents="spawn">
         <leggings color="667F33" material="leather leggings"/>
     </kit>
+    <kit id="red-wool">
+        <item slot="2" damage="14">wool</item>
+    </kit>
+    <kit id="yellow-wool">
+        <item slot="2" damage="4">wool</item>
+    </kit>
+    <kit id="blue-wool">
+        <item slot="2" damage="11">wool</item>
+    </kit>
+    <kit id="green-wool">
+        <item slot="2" damage="5">wool</item>
+    </kit>
 </kits>
-
+<spawns>
+    <spawn team="red" kit="red">
+        <regions>
+            <point yaw="-70">-50.5,68,-18.5</point>
+        </regions>
+    </spawn>
+    <spawn team="red" kit="red">
+        <regions>
+            <point yaw="-110">-50.5,68,19.5</point>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions>
+            <point yaw="160">19.5,68,51.5</point>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions>
+            <point yaw="-160">-18.5,68,51.5</point>
+        </regions>
+    </spawn>
+    <spawn team="yellow" kit="yellow">
+        <regions>
+            <point yaw="-20">-18.5,68,-50.5</point>
+        </regions>
+    </spawn>
+    <spawn team="yellow" kit="yellow">
+        <regions>
+            <point yaw="20">19.5,68,-50.5</point>
+        </regions>
+    </spawn>
+    <spawn team="green" kit="green">
+        <regions>
+            <point yaw="110">51.5,68,19.5</point>
+        </regions>
+    </spawn>
+    <spawn team="green" kit="green">
+        <regions>
+            <point yaw="70">51.5,68,-18.5</point>
+        </regions>
+    </spawn>
+    <default>
+        <regions>
+            <point yaw="-90">1.5,63,0.5</point>
+        </regions>
+    </default>
+</spawns>
+<damage>
+    <deny>
+        <cause>fall</cause>
+        <cause>fly into wall</cause>
+    </deny>
+</damage>
+<hunger>
+    <depletion>off</depletion>
+</hunger>
+<filters>
+    <team id="only-red">red</team>
+    <team id="only-blue">blue</team>
+    <team id="only-green">green</team>
+    <team id="only-yellow">yellow</team>
+    <not id="not-blue">
+        <team>blue</team>
+    </not>
+    <not id="not-yellow">
+        <team>yellow</team>
+    </not>
+    <not id="not-green">
+        <team>green</team>
+    </not>
+    <not id="not-red">
+        <team>red</team>
+    </not>
+</filters>
+<regions>
+    <apply block="never">
+        <everywhere/>
+    </apply>
+    <apply enter="not-red" message="You may not enter your own wool room!"/>
+    <apply enter="not-green" message="You may not enter your own wool room!"/>
+    <apply enter="not-blue" message="You may not enter your own wool room!"/>
+    <apply enter="not-yellow" message="You may not enter your own wool room!"/>
+    <cylinder id="red-woolroom" base="-75.5,37,0.5" radius="6" height="5"/> 
+    <cylinder id="green-woolroom" base="76.5,37,0.5" radius="6" height="5"/>
+    <cylinder id="blue-woolroom" base="0.5,37,76.5" radius="6" height="5"/>
+    <cylinder id="yellow-woolroom" base="0.5,37,-75.5" radius="6" height="5"/>
+</regions>
+<block-drops>
+    <rule trample="true">
+        <filter>
+            <material>wool:14</material>
+        </filter>
+        <kit>
+            <kit id="red-wool"/>
+        </kit>
+        <replacement>wool:14</replacement>
+    </rule>
+    <rule trample="true">
+        <filter>
+            <material>wool:4</material>
+        </filter>
+        <kit>
+            <kit id="yellow-wool"/>
+        </kit>
+        <replacement>wool:4</replacement>
+    </rule>
+    <rule trample="true">
+        <filter>
+            <material>wool:11</material>
+        </filter>
+        <kit>
+            <kit id="blue-wool"/>
+        </kit>
+        <replacement>wool:11</replacement>
+    </rule>
+    <rule trample="true">
+        <filter>
+            <material>wool:5</material>
+        </filter>
+        <kit>
+            <kit id="green-wool"/>
+        </kit>
+        <replacement>wool:5</replacement>
+    </rule>
+</block-drops>
+<itemremove>
+    <item>arrow</item>
+    <item>stone sword</item>
+    <item>leather leggings</item>
+    <item>bow</item>
+    <item>elytra</item>
+</itemremove>
+<kill-reward>
+    <item amount="2" material="arrow"/>
+</kill-reward>
+<wools team="red">
+    <wool color="blue" location="0.5,38,76.5">
+        <monument><block>-39.5,21,0.5</block></monument>
+    </wool>
+    <wool color="lime" location="76.5,38,0.5">
+        <monument><block>-38.5,21,-0.5</block></monument>
+    </wool>
+    <wool color="yellow" location="0.5,38,-75.5">
+        <monument><block>-38.5,21,1.5</block></monument>
+    </wool>
+</wools>
+<wools team="blue">
+    <wool color="red" location="-75.5,38,0.5">
+        <monument><block>0.5,21,40.5</block></monument>
+    </wool>
+    <wool color="lime" location="76.5,38,0.5">
+        <monument><block>-0.5,21,39.5</block></monument>
+    </wool>
+    <wool color="yellow" location="0.5,38,-75.5">
+        <monument><block>1.5,21,39.5</block></monument>
+    </wool>
+</wools>
+<wools team="green">
+    <wool color="red" location="-75.5,38,0.5">
+        <monument><block>39.5,21,1.5</block></monument>
+    </wool>
+    <wool color="blue" location="0.5,38,76.5">
+        <monument><block>39.5,21,-0.5</block></monument>
+    </wool>
+    <wool color="yellow" location="0.5,38,-75.5">
+        <monument><block>40.5,21,0.5</block></monument>
+    </wool>
+</wools>
+<wools team="yellow">
+    <wool color="red" location="-75.5,38,0.5">
+        <monument><block>0.5,21,-39.5</block></monument>
+    </wool>
+    <wool color="blue" location="0.5,38,76.5">
+        <monument><block>-0.5,21,-38.5</block></monument>
+    </wool>
+    <wool color="lime" location="76.5,38,0.5">
+        <monument><block>1.5,21,-38.5</block></monument>
+    </wool>
+</wools>
 </map>
