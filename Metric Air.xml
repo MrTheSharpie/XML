@@ -147,10 +147,72 @@
     <cylinder id="green-woolroom" base="76.5,37,0.5" radius="6" height="5"/>
     <cylinder id="blue-woolroom" base="0.5,37,76.5" radius="6" height="5"/>
     <cylinder id="yellow-woolroom" base="0.5,37,-75.5" radius="6" height="5"/>
-    <cuboid id="left-red-jump-1" min="-60.5,27,10.5" max="-58.5,28,10.5"/>
-    <cuboid id="left-red-jump-2" min="-60.5,27,10.5" max="-60.5,28,12.5"/>
-    <!--  Top level jump pads  -->
-    <apply velocity="0, 0.8, -3">
+    <cuboid id="right-red-jump-1" min="-60.5,27,10.5" max="-58.5,28,10.5"/>
+    <cuboid id="right-red-jump-2" min="-60.5,27,10.5" max="-60.5,28,12.5"/>
+    <cuboid id="left-red-jump-1" min="-60.5,27,-11.5" max="-60.5,28,-9.5"/>
+    <cuboid id="left-red-jump-2" min="-60.5,27,-9.5" max="-58.5,28,-9.5"/>
+    <cuboid id="left-blue-jump-1" min="-11.5,27,61.5" max="-9.5,28,61.5"/>
+    <cuboid id="left-blue-jump-2" min="-9.5,27,59.5" max="-9.5,28,61.5"/>
+    <cuboid id="right-blue-jump-1" min="10.5,27,59.5" max="10.5,28,61.5"/>
+    <cuboid id="right-blue-jump-2" min="10.5,27,61.5" max="12.5,28,61.5"/>
+    <cuboid id="left-green-jump-1" min="59.5,27,10.5" max="61.5,28,10.5"/>
+    <cuboid id="left-green-jump-2" min="61.5,27,10.5" max="61.5,28,12.5"/>
+    <cuboid id="right-green-jump-1" min="61.5,27,-11.5" max="61.5,28,-9.5"/>
+    <cuboid id="right-green-jump-2" min="59.5,27,-9.5" max="61.5,28,-9.5"/>
+    <cuboid id="left-yellow-jump-1" min="10.5,27,-60.5" max="12.5,28,-60.5"/>
+    <cuboid id="left-yellow-jump-2" min="10.5,27,-60.5" max="10.5,28,-58.5"/>
+    <union id="red-left-pad"><region id="red-left-jump-1"/><region id="red-left-jump-2"/></union>
+    <union id="red-right-pad"><region id="red-right-jump-1"/><region id="red-right-jump-2"/></union>
+    <union id="blue-left-pad"><region id="blue-left-jump-1"/><region id="blue-left-jump-2"/></union>
+    <union id="blue-right-pad"><region id="blue-right-jump-1"/><region id="blue-right-jump-2"/></union>
+    <union id="yellow-left-pad"><region id="yellow-left-jump-1"/><region id="yellow-left-jump-2"/></union>
+    <union id="yellow-right-pad"><region id="yellow-right-jump-1"/><region id="yellow-right-jump-2"/></union>
+    <union id="green-left-pad"><region id="green-left-jump-1"/><region id="green-left-jump-2"/></union>
+    <union id="green-right-pad"><region id="green-right-jump-1"/><region id="green-right-jump-2"/></union>
+    <!--  Red Pads  -->
+    <apply velocity="-2.5,7.1,0.5">
+        <region>
+            <region id="red-left-pad"/>
+        </region>
+    </apply>
+    <apply velocity="-2.5,7.1,-0.5">
+        <region>
+            <region id="red-right-pad"/>
+        </region>
+    </apply>
+    <!--  Blue Pads  -->
+    <apply velocity="-0.5,7.1,2.5">
+        <region>
+            <region id="blue-right-pad"/>
+        </region>
+    </apply>
+    <apply velocity="0.5,7.1,2.5">
+        <region>
+            <region id="blue-left-pad"/>
+        </region>
+    </apply>
+    <!--  green Pads  -->
+    <apply velocity="2.5,7.1,-0.5">
+        <region>
+            <region id="green-left-pad"/>
+        </region>
+    </apply>
+    <apply velocity="2.5,7.1,0.5">
+        <region>
+            <region id="green-right-pad"/>
+        </region>
+    </apply>
+    <!--  yellow Pads  -->
+    <apply velocity="-0.5,7.1,-2.5">
+        <region>
+            <region id="yellow-left-pad"/>
+        </region>
+    </apply>
+    <apply velocity="0.5,7.1,-2.5">
+        <region>
+            <region id="yellow-right-pad"/>
+        </region>
+    </apply>
 </regions>
 <block-drops>
     <rule trample="true">
