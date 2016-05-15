@@ -15,10 +15,10 @@
     <alert after="7s">Watch out! You'll be killed in one hit.</alert>
 </broadcasts>
 <teams>
-   <team id="red-team" color="red" max="7" max-overfill="10">Red</team>
-   <team id="blue-team" color="blue" max="7" max-overfill="10">Blue</team>
-   <team id="yellow-team" color="yellow" max="7" max-overfill="10">Yellow</team>
-   <team id="green-team" color="green" max="7" max-overfill="10">Green</team>
+   <team id="red-team" color="red" max="6" max-overfill="7">Red</team>
+   <team id="blue-team" color="blue" max="6" max-overfill="7">Blue</team>
+   <team id="yellow-team" color="yellow" max="6" max-overfill="7">Yellow</team>
+   <team id="green-team" color="green" max="6" max-overfill="7">Green</team>
 </teams>
 <rage/>
 <kits>
