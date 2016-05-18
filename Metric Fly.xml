@@ -140,9 +140,21 @@
         <everywhere/>
     </apply>
     <apply enter="not-red" message="You may not enter your own wool room!"/>
+        <region>
+            <region id="red-woolroon"/>
+        </region>
     <apply enter="not-green" message="You may not enter your own wool room!"/>
+        <region>
+            <region id="green-woolroon"/>
+        </region>
     <apply enter="not-blue" message="You may not enter your own wool room!"/>
+        <region>
+            <region id="blue-woolroon"/>
+        </region>
     <apply enter="not-yellow" message="You may not enter your own wool room!"/>
+        <region>
+            <region id="yellow-woolroon"/>
+        </region>
     <cylinder id="red-woolroom" base="-75.5,37,0.5" radius="6" height="5"/> 
     <cylinder id="green-woolroom" base="76.5,37,0.5" radius="6" height="5"/>
     <cylinder id="blue-woolroom" base="0.5,37,76.5" radius="6" height="5"/>
