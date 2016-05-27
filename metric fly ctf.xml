@@ -1,181 +1,167 @@
-<?xml version="1.0"?>
-<map proto="1.4.1">
-<name>Metric Fly</name>
-<version>1.0.0</version>
-<include src="void-death.xml"/>
-<objective>Capture the other team's wools and bring them back to your base!</objective>
-<authors>
-    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- shaarpie -->
-</authors>
-<gamemode>rage</gamemode>
-<gamemode>ctf</gamemode>
-<timelock>on</timelock>
-<broadcasts>
-    <tip after="5s">Use double jump while flying!</tip>
-    <alert after="7s">Watch out! You'll be killed in one hit.</alert>
-</broadcasts>
-<score>
-    <time>12m</time>
-	<limit>5</limit>
-    <deaths>0</deaths>
-    <kills>0</kills>
-</score>
-<teams>
-   <team id="red-team" color="red" max="6" max-overfill="7">Red</team>
-   <team id="blue-team" color="blue" max="6" max-overfill="7">Blue</team>
-   <team id="yellow-team" color="yellow" max="6" max-overfill="7">Yellow</team>
-   <team id="green-team" color="green" max="6" max-overfill="7">Green</team>
-</teams>
-<rage/>
-<kits>
-    <kit id="obs">
-      <potion duration="oo" amplifier="1">night vision</potion>
-    </kit>
-    <kit id="spawn">
-        <item slot="0" name="`aDagger" unbreakable="true" enchantment="damage all:10">stone sword</item>
-        <item slot="1" name="`bAK-99" unbreakable="true" enchantment="arrow damage:10">bow</item>
-        <item slot="8" amount="3">arrow</item>
-        <potion duration="3" amplifier="5">damage resistance</potion>
-        <potion duration="3">absorption</potion>
-        <potion duration="oo" amplifier="1">night vision</potion>
-        <walk-speed>1.8</walk-speed>
-        <double-jump recharge-before-landing="false" recharge-time="6.5s" power="6"/>
-        <chestplate unbreakable="true" locked="true">elytra</chestplate>
-    </kit>
-    <kit id="red" parents="spawn">
-        <leggings color="cd0000" material="leather leggings"/>
-    </kit>
-    <kit id="blue" parents="spawn">
-        <leggings color="0066cc" material="leather leggings"/>
-    </kit>
-    <kit id="yellow" parents="spawn">
-        <leggings color="E5E533" material="leather leggings"/>
-    </kit>
-    <kit id="green" parents="spawn">
-        <leggings color="667F33" material="leather leggings"/>
-    </kit>
-</kits>
-<spawns>
-    <spawn team="red" kit="red">
-        <regions>
-            <point yaw="-70">-50.5,68,-18.5</point>
-        </regions>
-    </spawn>
-    <spawn team="red" kit="red">
-        <regions>
-            <point yaw="-110">-50.5,68,19.5</point>
-        </regions>
-    </spawn>
-    <spawn team="blue" kit="blue">
-        <regions>
-            <point yaw="160">19.5,68,51.5</point>
-        </regions>
-    </spawn>
-    <spawn team="blue" kit="blue">
-        <regions>
-            <point yaw="-160">-18.5,68,51.5</point>
-        </regions>
-    </spawn>
-    <spawn team="yellow" kit="yellow">
-        <regions>
-            <point yaw="-20">-18.5,68,-50.5</point>
-        </regions>
-    </spawn>
-    <spawn team="yellow" kit="yellow">
-        <regions>
-            <point yaw="20">19.5,68,-50.5</point>
-        </regions>
-    </spawn>
-    <spawn team="green" kit="green">
-        <regions>
-            <point yaw="110">51.5,68,19.5</point>
-        </regions>
-    </spawn>
-    <spawn team="green" kit="green">
-        <regions>
-            <point yaw="70">51.5,68,-18.5</point>
-        </regions>
-    </spawn>
-    <default kit="obs">
-        <regions>
-            <point yaw="-90">1.5,63,0.5</point>
-        </regions>
-    </default>
-</spawns>
-<damage>
-    <deny>
-        <cause>fall</cause>
-        <cause>fly into wall</cause>
-    </deny>
-</damage>
-<hunger>
-    <depletion>off</depletion>
-</hunger>
-<filters>
-    <team id="only-red">red</team>
-    <team id="only-blue">blue</team>
-    <team id="only-green">green</team>
-    <team id="only-yellow">yellow</team>
-    <not id="not-blue">
-        <team>blue</team>
-    </not>
-    <not id="not-yellow">
-        <team>yellow</team>
-    </not>
-    <not id="not-green">
-        <team>green</team>
-    </not>
-    <not id="not-red">
-        <team>red</team>
-    </not>
-</filters>
-<regions>
-    <apply block="never">
-        <everywhere/>
-    </apply>
-</regions>
-<itemremove>
-    <item>arrow</item>
-    <item>stone sword</item>
-    <item>leather leggings</item>
-    <item>bow</item>
-    <item>elytra</item>
-</itemremove>
-<kill-reward>
-    <item amount="2" material="arrow"/>
-</kill-reward>
-<flags>
-    <flag id="red-flag" name="Red Flag" owner="red-team" color="red" points="-1">
-        <post yaw="-90" pickup-filter="not-red">-75.5, -38, 0.5</post>
-    </flag>
-    <flag id="yellow-flag" name="Yellow Flag" owner="yellow-team" color="yellow" points="-1">
-        <post yaw="0" pickup-filter="not-yellow">0.5, 38, -75.5</post>
-    </flag>
-    <flag id="blue-flag" name="Blue Flag" owner="blue-team" color="light blue" points="-1">
-        <post yaw="180" pickup-filter="not-blue">0.5, 38, 76.5</post>
-    </flag>
-    <flag id="green-flag" name="Green Flag" owner="green-team" color="green" points="-1">
-        <post yaw="90" pickup-filter="not-green">76.5, 38, 0.5</post>
-    </flag>
-	<net points="1" capture-filter="only-red" flags="yellow-flag blue-flag green-flag">
-        <region>
-            <cylinder base="-75.5,37,0.5" radius="6" height="5"/>
-        </region>
-    </net>
-    <net points="1" capture-filter="only-yellow" flags="red-flag blue-flag green-flag">
-        <region>
-	        <cylinder base="0.5,37,-75.5" radius="6" height="5"/>
-	    </region>
-    </net>
-    <net points="1" capture-filter="only-blue" flags="red-flag yellow-flag green-flag">
-        <region>
-            <cylinder base="0.5,37,76.5" radius="6" height="5"/>
-        </region>
-    </net>
-    <net points="1" capture-filter="only-green" flags="red-flag yellow-flag blue-flag">
-        <region>
-            <cylinder base="76.5,37,0.5" radius="6" height="5"/>
-        </region>
-    </net>
-</flags>
+<map proto="1.4.0">
+    <name>Metric Fly</name>
+    <version>1.0.0</version>
+    <include src="void-death.xml" />
+    <objective>Capture the other team's wools and bring them back to your base!</objective>
+    <authors>
+        <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5" />
+        <!-- shaarpie -->
+    </authors>
+    <contributors>
+        <contributor uuid="38ab65dd-95f9-406f-917c-6accc995421f" contribution="XML Fixing" />
+        <!-- GoldenOre -->
+    </contributors>
+    <gamemode>rage</gamemode>
+    <gamemode>ctf</gamemode>
+    <timelock>on</timelock>
+    <broadcasts>
+        <tip after="5s">Use double jump while flying!</tip>
+        <alert after="7s">Watch out! You'll be killed in one hit.</alert>
+    </broadcasts>
+    <score>
+        <limit>5</limit>
+        <deaths>0</deaths>
+        <kills>0</kills>
+    </score>
+    <teams>
+        <team id="red-team" color="red" max="6" max-overfill="7">Red</team>
+        <team id="blue-team" color="blue" max="6" max-overfill="7">Blue</team>
+        <team id="yellow-team" color="yellow" max="6" max-overfill="7">Yellow</team>
+        <team id="green-team" color="green" max="6" max-overfill="7">Green</team>
+    </teams>
+    <rage />
+    <kits>
+        <kit id="obs">
+            <potion duration="oo" amplifier="1">night vision</potion>
+        </kit>
+        <kit id="spawn">
+            <item slot="0" name="`aDagger" unbreakable="true" enchantment="damage all:10">stone sword</item>
+            <item slot="1" name="`bAK-99" unbreakable="true" enchantment="arrow damage:10">bow</item>
+            <item slot="8" amount="3">arrow</item>
+            <potion duration="3" amplifier="5">damage resistance</potion>
+            <potion duration="3">absorption</potion>
+            <potion duration="oo" amplifier="1">night vision</potion>
+            <walk-speed>1.8</walk-speed>
+            <double-jump recharge-before-landing="false" recharge-time="3.25s" power="6" />
+            <chestplate unbreakable="true" locked="true">elytra</chestplate>
+        </kit>
+        <kit id="red-kit" parents="spawn">
+            <leggings color="cd0000" material="leather leggings" />
+        </kit>
+        <kit id="blue-kit" parents="spawn">
+            <leggings color="0066cc" material="leather leggings" />
+        </kit>
+        <kit id="yellow-kit" parents="spawn">
+            <leggings color="E5E533" material="leather leggings" />
+        </kit>
+        <kit id="green-kit" parents="spawn">
+            <leggings color="667F33" material="leather leggings" />
+        </kit>
+    </kits>
+    <spawns>
+        <spawn team="red-team" kit="red-kit">
+            <regions>
+                <point yaw="-70">-50.5,68,-18.5</point>
+                <point yaw="-110">-50.5,68,19.5</point>
+            </regions>
+        </spawn>
+        <spawn team="blue-team" kit="blue-kit">
+            <regions>
+                <point yaw="160">19.5,68,51.5</point>
+                <point yaw="-160">-18.5,68,51.5</point>
+            </regions>
+        </spawn>
+        <spawn team="yellow-team" kit="yellow-kit">
+            <regions>
+                <point yaw="-20">-18.5,68,-50.5</point>
+                <point yaw="20">19.5,68,-50.5</point>
+            </regions>
+        </spawn>
+        <spawn team="green-team" kit="green-kit">
+            <regions>
+                <point yaw="110">51.5,68,19.5</point>
+                <point yaw="70">51.5,68,-18.5</point>
+            </regions>
+        </spawn>
+        <default kit="obs">
+            <regions>
+                <point yaw="-90">1.5,63,0.5</point>
+            </regions>
+        </default>
+    </spawns>
+    <damage>
+        <deny>
+            <cause>fall</cause>
+        </deny>
+    </damage>
+    <hunger>
+        <depletion>off</depletion>
+    </hunger>
+    <filters>
+        <team id="only-red">red-team</team>
+        <team id="only-blue">blue-team</team>
+        <team id="only-green">green-team</team>
+        <team id="only-yellow">yellow-team</team>
+        <not id="not-blue">
+            <team>blue-team</team>
+        </not>
+        <not id="not-yellow">
+            <team>yellow-team</team>
+        </not>
+        <not id="not-green">
+            <team>green-team</team>
+        </not>
+        <not id="not-red">
+            <team>red-team</team>
+        </not>
+    </filters>
+    <regions>
+        <apply block="never">
+            <everywhere />
+        </apply>
+    </regions>
+    <itemremove>
+        <item>arrow</item>
+        <item>stone sword</item>
+        <item>leather leggings</item>
+        <item>bow</item>
+        <item>elytra</item>
+    </itemremove>
+    <kill-reward>
+        <item amount="2" material="arrow" />
+    </kill-reward>
+    <flags>
+        <flag id="red-flag" name="Red Flag" owner="red-team" color="red">
+            <post yaw="0" respawn-time="15" recover-time="1" pickup-filter="not-red">-76, 38, 0</post>
+        </flag>
+        <flag id="yellow-flag" name="Yellow Flag" owner="yellow-team" color="yellow">
+            <post yaw="0" respawn-time="15" recover-time="1" pickup-filter="not-yellow">0.5, 38, -75.5</post>
+        </flag>
+        <flag id="blue-flag" name="Blue Flag" owner="blue-team" color="light blue">
+            <post yaw="180" respawn-time="15" recover-time="1" pickup-filter="not-blue">0.5, 38, 76.5</post>
+        </flag>
+        <flag id="green-flag" name="Green Flag" owner="green-team" color="green">
+            <post yaw="90" respawn-time="15" recover-time="1" pickup-filter="not-green">76.5, 38, 0.5</post>
+        </flag>
+        <net points="1" capture-filter="only-red" flags="yellow-flag blue-flag green-flag">
+            <region>
+                <cylinder base="-75.5, 38, 0.5" radius="6" height="5" />
+            </region>
+        </net>
+        <net points="1" capture-filter="only-yellow" flags="red-flag blue-flag green-flag">
+            <region>
+                <cylinder base="0.5,37,-75.5" radius="6" height="5" />
+            </region>
+        </net>
+        <net points="1" capture-filter="only-blue" flags="red-flag yellow-flag green-flag">
+            <region>
+                <cylinder base="0.5,37,76.5" radius="6" height="5" />
+            </region>
+        </net>
+        <net points="1" capture-filter="only-green" flags="red-flag yellow-flag blue-flag">
+            <region>
+                <cylinder base="76.5,37,0.5" radius="6" height="5" />
+            </region>
+        </net>
+    </flags>
 </map>
