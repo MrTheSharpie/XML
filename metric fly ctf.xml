@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<map proto="1.4.0">
+<map proto="1.4.1">
 <name>Metric Fly</name>
 <version>1.0.0</version>
 <include src="void-death.xml"/>
@@ -14,6 +14,12 @@
     <tip after="5s">Use double jump while flying!</tip>
     <alert after="7s">Watch out! You'll be killed in one hit.</alert>
 </broadcasts>
+<score>
+    <time>12m</time>
+	<limit>5</limit>
+    <deaths>0</deaths>
+    <kills>0</kills>
+</score>
 <teams>
    <team id="red-team" color="red" max="6" max-overfill="7">Red</team>
    <team id="blue-team" color="blue" max="6" max-overfill="7">Blue</team>
@@ -33,7 +39,7 @@
         <potion duration="3">absorption</potion>
         <potion duration="oo" amplifier="1">night vision</potion>
         <walk-speed>1.8</walk-speed>
-        <double-jump recharge-before-landing="false" recharge-time="4.5s" power="7"/>
+        <double-jump recharge-before-landing="false" recharge-time="6.5s" power="6"/>
         <chestplate unbreakable="true" locked="true">elytra</chestplate>
     </kit>
     <kit id="red" parents="spawn">
@@ -138,4 +144,38 @@
 <kill-reward>
     <item amount="2" material="arrow"/>
 </kill-reward>
+<flags>
+    <flag id="red-flag" name="Red Flag" owner="red-team" color="red" points="-1">
+        <post yaw="-90" pickup-filter="not-red">-75.5, -38, 0.5</post>
+    </flag>
+    <flag id="yellow-flag" name="Yellow Flag" owner="yellow-team" color="yellow" points="-1">
+        <post yaw="0" pickup-filter="not-yellow">0.5, 38, -75.5</post>
+    </flag>
+    <flag id="blue-flag" name="Blue Flag" owner="blue-team" color="light blue" points="-1">
+        <post yaw="180" pickup-filter="not-blue">0.5, 38, 76.5</post>
+    </flag>
+    <flag id="green-flag" name="Green Flag" owner="green-team" color="green" points="-1">
+        <post yaw="90" pickup-filter="not-green">76.5, 38, 0.5</post>
+    </flag>
+	<net points="1" capture-filter="only-red" flags="yellow-flag blue-flag green-flag">
+        <region>
+            <cylinder base="-75.5,37,0.5" radius="6" height="5"/>
+        </region>
+    </net>
+    <net points="1" capture-filter="only-yellow" flags="red-flag blue-flag green-flag">
+        <region>
+	        <cylinder base="0.5,37,-75.5" radius="6" height="5"/>
+	    </region>
+    </net>
+    <net points="1" capture-filter="only-blue" flags="red-flag yellow-flag green-flag">
+        <region>
+            <cylinder base="0.5,37,76.5" radius="6" height="5"/>
+        </region>
+    </net>
+    <net points="1" capture-filter="only-green" flags="red-flag yellow-flag blue-flag">
+        <region>
+            <cylinder base="76.5,37,0.5" radius="6" height="5"/>
+        </region>
+    </net>
+</flags>
 </map>
