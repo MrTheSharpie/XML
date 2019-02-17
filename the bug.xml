@@ -1,1 +1,11 @@
+<?xml version="1.0"?>
+<map proto="1.4.3">
+<name>Map Name</name>
+<version>1.0.0</version>
+<objective>Short description about the maps objective.</objective>
 
+<!-- Map authors & contributors. -->
+
+<!-- Map modules, i.e. objectives, regions, spawns. -->
+
+</map>
