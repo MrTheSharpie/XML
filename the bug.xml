@@ -3,9 +3,124 @@
 <name>Map Name</name>
 <version>1.0.0</version>
 <objective>Short description about the maps objective.</objective>
-
-<!-- Map authors & contributors. -->
-
+<authors>
+    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- shaarpie -->
+</authors>
 <!-- Map modules, i.e. objectives, regions, spawns. -->
-
+<filters>
+    <not id="no-void">
+        <void/>
+    </not>
+    <team id="red-team-filter">red-team</team>
+    <team id="blue-team-filter">blue-team</team>
+</filters>
+<regions>
+    <apply block="no-void" message="You may not modify the void area!">
+        <region>
+            <rectangle id="main-area" min="-45,-31" max="45,31"/>
+        </region>
+    </apply>
+    <apply enter="red-team-filter" block="never">
+    	<region>
+    		<cuboid id="red-spawn" min="31,0,20" max="45,17,31"/>
+    	</region>
+    </apply>
+    <apply enter="blue-team-filter" block="never">
+    	<region>
+    		<cuboid id="blue-spawn" min="-44,0,20" max="-30,17,31"/>
+    	</region>
+    </apply>
+    <apply block="never" message="You can't build this high!">
+    	<above y="21"/>
+    </apply>
+</regions>
+<broadcasts>
+    <tip after="30s" every="3m">You get a TNT every 5 kills killstreak!</tip>
+</broadcasts>
+<teams>
+   <team id="red-team" color="red" max="4" max-overfill="5">Red</team>
+   <team id="blue-team" color="blue" max="4" max-overfill="5">Blue</team>
+</teams>
+<spawns>
+    <spawn team="red-team" kit="red">
+        <regions yaw="180">
+            <block>38,7.5,27</block>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions yaw="180">
+            <block>-37,7.5,27</block>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="0">
+            <block>0,37.5,-5</block>
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit id="spawn" force="true">
+        <item slot="0" material="stone sword" unbreakable="true"/>
+        <item slot="1" material="bow">
+        	<enchantment>infinity</enchantment>
+        </item>
+        <item slot="2" material="diamond pickaxe" unbreakable="true"/>
+        <item slot="3" material="iron axe" unbreakable="true"/>
+        <item slot="4" material="wood" amount="48" damage="5"/>
+        <item slot="5" material="glass" amount="16"/>
+        <item slot="6" material="golden carrot" amount="32"/>
+        <item slot="7" material="golden apple" amount="1"/>
+        <item slot="8" material="water bucket"/>
+        <item slot="9" material="arrow"/>
+        <effect duration="3" amplifier="1">instant_health</effect>
+    </kit>
+    <kit id="red" parents="spawn">
+        <helmet color="cd0000" material="leather chestplate"/>
+    </kit>
+    <kit id="blue" parents="spawn">
+        <helmet color="0066cc" material="leather chestplate"/>
+    </kit>
+</kits>
+<itemremove>
+    <item>arrow</item>
+    <item>golden carrot</item>
+    <item>stone sword</item>
+    <item>bow</item>
+    <item>diamond pickaxe</item>
+    <item>iron axe</item>
+    <item>wood</item>
+    <item>glass</item>
+    <item>water bucket</item>
+    <item>leather chestplate</item>
+</itemremove>
+<tnt>
+    <instantignite>on</instantignite>
+    <fuse>3s</fuse>
+</tnt>
+<kill-rewards>
+    <kill-reward>
+        <item amount="1" material="golden apple"/>
+        <item amount="8" material="wood" damage="5"/>
+    </kill-reward>
+    <kill-reward>
+        <filter>
+            <all>
+                <kill-streak count="5"/>
+            </all>
+        </filter>
+        <item material="tnt"/>
+    </kill-reward>
+</kill-rewards>
+<cores material="obsidian" leak="4" mode-changes="true">
+    <core team="blue-team">
+        <region><cuboid min="-38,11,-24" max="-36,16,-22"/></region>
+    </core>
+    <core team="red-team">
+        <region><cuboid min="36,11,-24" max="38,16,-22"/></region>
+    </core>
+    <modes>
+    	<mode after="10m" material="gold block" name="`eGOLD CORE MODE"/>
+	</modes>
+</cores>
 </map>
+
