@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <map proto="1.4.3">
-<name>Map Name</name>
+<name>The Bug</name>
 <version>1.0.0</version>
-<objective>Short description about the maps objective.</objective>
+<objective>Leak the enemy core!</objective>
 <authors>
     <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- shaarpie -->
 </authors>
