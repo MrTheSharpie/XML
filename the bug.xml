@@ -146,6 +146,6 @@
     </core>
 </cores>
 <modes>        
-    <mode after="1m" material="glass" name="`eGLASS CORE MODE"/>
+    <mode after="10m" material="glass" name="`eGLASS CORE MODE"/>
 </modes>
 </map>
