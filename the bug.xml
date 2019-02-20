@@ -43,7 +43,7 @@
 <blockdrops>
     <rule wrong-tool="true">
         <region>
-            <region id="everywhere"/>
+            <region id="spawns"/>
         </region>
         <filter>
             <any>
@@ -60,7 +60,7 @@
 </blockdrops>
 <maxbuildheight>21</maxbuildheight>
 <broadcasts>
-    <tip after="30s" every="3m">You get a TNT every 5 kills killstreak!</tip>
+    <tip after="30s" every="3m">You get a TNT every 5 kills streak!</tip>
 </broadcasts>
 <teams>
    <team id="red-team" color="red" max="4" max-overfill="5">Red</team>
@@ -79,7 +79,7 @@
     </spawn>
     <default>
         <regions yaw="0">
-            <block>0,37.5,-5</block>
+            <block>0,38,-5</block>
         </regions>
     </default>
 </spawns>
@@ -110,13 +110,14 @@
     <item>wood</item>
     <item>glass</item>
     <item>water bucket</item>
+    <item>leather helmet</item>
 </itemremove>
 <toolrepair>
-    <item>stone sword</item>
-    <item>bow</item>
-    <item>stone pickaxe</item>
-    <item>iron axe</item>
-    <item>leather helmet</item>
+    <tool>stone sword</tool>
+    <tool>bow</tool>
+    <tool>stone pickaxe</tool>
+    <tool>iron axe</tool>
+    <tool>golden apple</tool>
 </toolrepair>
 <tnt>
     <instantignite>on</instantignite>
@@ -146,6 +147,6 @@
     </core>
 </cores>
 <modes>        
-    <mode after="10m" material="glass" name="`eGLASS CORE MODE"/>
+    <mode after="5m" material="glass" name="`eGLASS CORE MODE"/>
 </modes>
 </map>
