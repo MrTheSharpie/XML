@@ -28,9 +28,9 @@
 	<point id="blue-spawn-point" yaw="0">0.5,10.5,96.5</point>
 	<!-- Applying filters -->
 	<apply region="blue-spawn" enter="only-blue" message="You may not enter the enemy spawn!"/>
-    <apply region="blue-spawn" block="never" message="You may not edit the spawn!"/>
+    	<apply region="blue-spawn" block="never" message="You may not edit the spawn!"/>
 	<apply region="red-spawn" enter="only-red" message="You may not enter the enemy spawn!"/>
-    <apply region="red-spawn" block="never" message="You may not edit the spawn!"/>
+    	<apply region="red-spawn" block="never" message="You may not edit the spawn!"/>
 	<apply block="no-void" message="You may not modify the void area!">
         <regions>
             <region id="everywhere"/>
