@@ -1,7 +1,7 @@
 <map proto="1.4.3">
 <name>Flumine</name>
 <version>1.0.0</version>
-<objective>Capture the enemy flag 10 times!</objective>
+<objective>Capture the enemy flag 5 times!</objective>
 <!-- Map authors & contributors. -->
 <authors>
     <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpie -->
@@ -82,9 +82,9 @@
     <net post="blue-post" points="1" region="red-team-net" capture-filter="only-red"/>
 </flags>
 <score>
-    <limit>10</limit>
+    <limit>5</limit>
 </score>
-<time result="objectives">20m</time>
+<time result="objectives">15m</time>
 <kill-rewards>
     <kill-reward>
         <item amount="1" material="golden apple"/>
