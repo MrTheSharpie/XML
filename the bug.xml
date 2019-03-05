@@ -60,7 +60,7 @@
 </blockdrops>
 <maxbuildheight>21</maxbuildheight>
 <broadcasts>
-    <tip after="30s" every="5m">You get a TNT every 5 kills streak!</tip>
+    <tip after="25s" every="5m">You get a TNT every 5 kills streak!</tip>
 </broadcasts>
 <teams>
    <team id="red-team" color="red" max="4" max-overfill="4">Red</team>
