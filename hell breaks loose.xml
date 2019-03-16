@@ -6,10 +6,11 @@
 <authors>
     <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpie -->
 </authors>
-<!--contributors>
-    <contributor uuid="c1d94f18-6ea3-495a-8d1b-7d9eaf393f64" contribution="Building help"/> 
-    <contributor uuid="" contribution="XML help"/> 
-</contributors-->
+<contributors>
+    <contributor uuid="c1d94f18-6ea3-495a-8d1b-7d9eaf393f64" contribution="Building help"/> <!-- JapaneseSquid -->
+    <contributor uuid="74e59389-2b3e-490d-954a-a7af1fb1eded" contribution="XML help"/> <!-- Dowly_ -->
+    <contributor uuid="2cef6d05-ec9a-44b3-bedc-53359c68ae65" contribution="XML help"/> <!-- BGMP -->
+</contributors>
 <!-- Map modules, i.e. objectives, regions, spawns. -->
 <teams>
    <team id="red-team" color="red" max="6" max-overfill="8">Red</team>
