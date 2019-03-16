@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<map proto="1.4.3">
+<name>Hell Breaks Loose</name>
+<version>1.0.0</version>
+<objective>The first attacker team that captures the Defender's flag 3 times wins the match</objective>
+<authors>
+    <author uuid="62d9830a-0b77-4e21-9d4f-de4b60c68fb5"/> <!-- Sharpie -->
+</authors>
+<!--contributors>
+    <contributor uuid="c1d94f18-6ea3-495a-8d1b-7d9eaf393f64" contribution="Building help"/> 
+    <contributor uuid="" contribution="XML help"/> 
+</contributors-->
+<!-- Map modules, i.e. objectives, regions, spawns. -->
+<teams>
+   <team id="red-team" color="red" max="6" max-overfill="8">Red</team>
+   <team id="blue-team" color="blue" max="6" max-overfill="8">Blue</team>
+   <team id="green-team" color="green" max="6" max-overfill="8">Green</team>
+   <team id="yellow-team" color="yellow" max="6" max-overfill="8">Yellow</team>
+   <team id="defender-team" color="gold" max="10" max-overfill="12">Defenders</team>
+</teams>
+<filters>
+    <all id="no-void">
+        <deny>
+            <void/>
+        </deny>
+        <any>
+            <material>wood</material>
+            <material>sandstone</material>
+        </any>
+    </all>
+    <team id="only-red">red-team</team>
+    <team id="only-green">green-team</team>
+    <team id="only-blue">blue-team</team>
+    <team id="only-yellow">yellow-team</team>
+    <team id="only-defenders">defender-team</team>
+    <any id="only-attackers">
+        <team>red-team</team>
+        <team>green-team</team>
+        <team>blue-team</team>
+        <team>yellow-team</team>
+    </any>
+    <material id="only-iron">iron block</material>
+</filters>
+<regions>
+    <cuboid id="flag-area" min="-5.5,9.5,-4.5" max="3.5,16.5,4.5"/>
+    <cuboid id="defender-spawn" min="-5.5,18.5,-4.5" max="4.5,35.5,5.5"/>
+    <rectangle id="red-spawn" min="-10.5,66.5" max="8.5,79.5"/>
+    <rectangle id="green-spawn" min="-80.5,-9.5" max="-67.5,9.5"/>
+    <rectangle id="blue-spawn" min="65.5,-9.5" max="78.5,9.5"/>
+    <rectangle id="yellow-spawn" min="-9.5,-78.5" max="8.5,-66.5"/>
+    <union id="spawns">
+        <region id="red-spawn"/>
+        <region id="blue-spawn"/>
+        <region id="green-spawn"/>
+        <region id="yellow-spawn"/>
+        <region id="defender-spawn"/>
+    </union>
+    <complement id="not-playable-area">
+        <everywhere/>
+        <region id="spawns"/>
+    </complement>
+    <!-- Portals -->
+    <cuboid id="west-portal" min="-4,22,2" max="-5,25,-1"/>
+    <cuboid id="east-portal" min="3.5,22.5,-1.5" max="4.5,24.5,1.5"/>
+    <cuboid id="north-portal" min="-2.5,22.5,-4.5" max="0.5,24.5,-2.5" />
+    <cuboid id="south-portal" min="-2.5,22.5,3.5" max="0.5,24.5,5.5"/>
+    <!---->
+    <point id="east-portal-destination">16.5,9.1,0.5</point>
+    <point id="north-portal-destination">-0.5,9.1,-16.5</point>
+    <point id="south-portal-destination">-0.5,9.1,17.5</point>
+    <point id="red-spawn-point">-0.5,10.1,74.5</point>
+    <point id="blue-spawn-point">73.5,10.1,0.5</point>
+    <point id="green-spawn-point">-74.5,10.1,0.5</point>
+    <point id="yellow-spawn-point">-0.5,10.1,-73.5</point>
+    <point id="defender-spawn-point">1.5,27,0.5</point>
+    <rectangle id="red-net" min="-2.5,72.5" max="1.5,76.5"/>
+    <rectangle id="blue-net" min="71.5,-1.5" max="75.5,2.5"/>
+    <rectangle id="green-net" min="-76.5,-1.5" max="-72.5,2.5"/>
+    <rectangle id="yellow-net" min="-2.5,-75.5" max="1.5,-71.5"/>
+    <apply block-place="no-void" block-break="no-void" message="You can't do that!" region="not-playable-area"/>
+    <apply block-break="only-iron" block-place="never" message="You may only break iron blocks inside spawn!" region="spawns"/>
+    <apply enter="only-blue" region="blue-spawn" message="You may not enter the enemy spawn!"/>
+    <apply enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
+    <apply enter="only-yellow" region="yellow-spawn" message="You may not enter the enemy spawn!"/>
+    <apply enter="only-green" region="green-spawn" message="You may not enter the enemy spawn!"/>
+    <apply block="never" region="flag-area"/>
+</regions>
+<kits>
+    <kit id="spawn" force="true">
+        <item slot="0" material="iron sword" unbreakable="true"/>
+        <item slot="1" material="bow" unbreakable="true"/>
+        <item slot="2" material="stone pickaxe" unbreakable="true"/>
+        <item slot="5" amount="64" material="golden carrot"/>
+        <item slot="6" amount="1" material="golden apple"/>
+        <item slot="9" amount="16" material="arrow"/>
+        <effect duration="5" amplifier="1">instant_health</effect>
+    </kit>
+    <kit id="red" parents="spawn">
+        <helmet color="cd0000" material="leather helmet"/>
+        <chestplate color="cd0000" material="leather chestplate"/>
+        <leggings material="chainmail leggings"/>
+        <item slot="3" material="stone axe" unbreakable="true"/>
+        <item slot="4" material="wood" amount="8"/>
+    </kit>
+    <kit id="blue" parents="spawn">
+        <helmet color="0066cc" material="leather helmet"/>
+        <chestplate color="0066cc" material="leather chestplate"/>
+        <leggings material="chainmail leggings"/>
+        <item slot="3" material="stone axe" unbreakable="true"/>
+        <item slot="4" material="wood" amount="8"/>
+    </kit>
+    <kit id="green" parents="spawn">
+        <helmet color="667F33" material="leather helmet"/>
+        <chestplate color="667F33" material="leather chestplate"/>
+        <leggings material="chainmail leggings"/>
+        <item slot="3" material="stone axe" unbreakable="true"/>
+        <item slot="4" material="wood" amount="8"/>
+    </kit>
+    <kit id="yellow" parents="spawn">
+        <helmet color="E5E533" material="leather helmet"/>
+        <chestplate color="E5E533" material="leather chestplate"/>
+        <leggings material="chainmail leggings"/>
+        <item slot="3" material="stone axe" unbreakable="true"/>
+        <item slot="4" material="wood" amount="8"/>
+    </kit>
+    <kit id="defenders" parents="spawn">
+        <helmet color="4C4C4C" material="leather helmet"/>
+        <chestplate color="4C4C4C" material="leather chestplate"/>
+        <leggings material="diamond leggings"/>
+        <item slot="3" material="gold axe" unbreakable="true"/>
+        <item slot="4" material="sandstone" amount="8"/>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="red-team" kit="red">
+        <regions yaw="180">
+            <region id="red-spawn-point"/>
+        </regions>
+    </spawn>
+    <spawn team="blue-team" kit="blue">
+        <regions yaw="90">
+            <region id="blue-spawn-point"/>
+        </regions>
+    </spawn>
+    <spawn team="yellow-team" kit="yellow">
+        <regions yaw="0">
+            <region id="yellow-spawn-point"/>
+        </regions>
+    </spawn>
+    <spawn team="green-team" kit="green">
+        <regions yaw="-90">
+            <region id="green-spawn-point"/>
+        </regions>
+    </spawn>
+    <spawn team="defender-team" kit="defenders">
+        <regions yaw="90">
+            <region id="defender-spawn-point"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="180">
+            <point>-0.5,71.1,3.5</point>
+        </regions>
+    </default>
+</spawns>
+<portals>
+    <portal region="west-portal" x="@-17.5" y="@9" z="@0.5" yaw="@-90" sound="true"/>
+    <portal region="east-portal" x="@16.5" y="@9" z="@0.5" yaw="@90" sound="true"/>
+    <portal region="south-portal" x="@-0.5" y="@9" z="@17.5" yaw="@180" sound="true"/>
+    <portal region="north-portal" x="@-0.5" y="@9" z="@-16.5" yaw="@0" sound="true"/>
+</portals>
+<control-points capture-players="lead" incremental="true" show-progress="true">
+    <control-point name="Defend Time" capture-time="1800s" capture-filter="only-defenders" player-filter="only-defenders">
+        <capture>
+            <cylinder base="0,-200,0" radius="300" height="250"/>
+        </capture>
+        <progress>
+            <cylinder base="0,0,0" radius="1" height="1"/>
+        </progress>
+        <captured>
+            <cylinder base="0,0,0" radius="1" height="1"/>
+        </captured>
+        <visual-material>
+        	<not>
+        		<any>
+        			<material>stained clay</material>
+        			<material>wool</material>
+        		</any>
+        	</not>
+        </visual-material>
+    </control-point>
+</control-points>
+<flags>
+    <flag id="flag" name="Flag" owner="defender-team" pickup-filter="only-attackers" capture-filter="only-attackers">
+        <post>-1,11,0</post>
+    </flag>
+    <flags points="1">
+        <net region="red-net" flag="flag"/>
+        <net region="blue-net" flag="flag"/>
+        <net region="green-net" flag="flag"/>
+        <net region="yellow-net" flag="flag"/>
+    </flags>
+</flags>
+<time result="defender-team">30m</time>
+<score>
+    <limit>3</limit>
+</score>
+<itemremove>
+    <item>wood</item>
+    <item>sandstone</item>
+    <item>golden carrot</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>diamond leggings</item>
+    <item>chainmail leggings</item>
+    <item>gold axe</item>
+    <item>stone pickaxe</item>
+    <item>stone axe</item>
+</itemremove>
+<tool-repair>
+    <tool>iron sword</tool>
+    <tool>bow</tool>
+    <tool>arrow</tool>
+    <tool>golden apple</tool>
+</tool-repair>
+</map>
+
