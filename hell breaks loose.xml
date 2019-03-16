@@ -43,7 +43,6 @@
     <material id="only-iron">iron block</material>
 </filters>
 <regions>
-    <cuboid id="flag-area" min="-5.5,9.5,-4.5" max="3.5,16.5,4.5"/>
     <cuboid id="defender-spawn" min="-5.5,18.5,-4.5" max="4.5,35.5,5.5"/>
     <rectangle id="red-spawn" min="-10.5,66.5" max="8.5,79.5"/>
     <rectangle id="green-spawn" min="-80.5,-9.5" max="-67.5,9.5"/>
@@ -84,7 +83,6 @@
     <apply enter="only-red" region="red-spawn" message="You may not enter the enemy spawn!"/>
     <apply enter="only-yellow" region="yellow-spawn" message="You may not enter the enemy spawn!"/>
     <apply enter="only-green" region="green-spawn" message="You may not enter the enemy spawn!"/>
-    <apply block="never" region="flag-area"/>
 </regions>
 <kits>
     <kit id="spawn" force="true">
@@ -130,6 +128,7 @@
         <leggings material="diamond leggings"/>
         <item slot="3" material="gold axe" unbreakable="true"/>
         <item slot="4" material="sandstone" amount="8"/>
+        <effect>fire resistance</effect>
     </kit>
 </kits>
 <spawns>
@@ -236,5 +235,10 @@
         <item amount="4">sandstone</item>
     </kill-reward>
 </kill-rewards>
+<maxbuildheight>17</maxbuildheight>
+<respawns>
+    <respawn delay="1.5s" filter="only-defenders" auto="true"/>
+    <respawn delay="5s" filter="only-attackers"/>
+</respawns>
 </map>
 
