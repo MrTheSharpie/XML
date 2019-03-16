@@ -171,7 +171,7 @@
     <portal region="north-portal" x="@-0.5" y="@9" z="@-16.5" yaw="@0" sound="true"/>
 </portals>
 <control-points capture-players="lead" incremental="true" show-progress="true">
-    <control-point name="Defend Time" capture-time="1800s" capture-filter="only-defenders" player-filter="only-defenders">
+    <control-point name="Defend Time" capture-time="1200s" capture-filter="only-defenders" player-filter="only-defenders">
         <capture>
             <cylinder base="0,-200,0" radius="300" height="250"/>
         </capture>
@@ -182,12 +182,12 @@
             <cylinder base="0,0,0" radius="1" height="1"/>
         </captured>
         <visual-material>
-        	<not>
-        		<any>
-        			<material>stained clay</material>
-        			<material>wool</material>
-        		</any>
-        	</not>
+            <not>
+                <any>
+                    <material>stained clay</material>
+                    <material>wool</material>
+                </any>
+            </not>
         </visual-material>
     </control-point>
 </control-points>
@@ -202,7 +202,7 @@
         <net region="yellow-net" flag="flag"/>
     </flags>
 </flags>
-<time result="defender-team">30m</time>
+<time result="defender-team">20m</time>
 <score>
     <limit>3</limit>
 </score>
@@ -224,5 +224,17 @@
     <tool>arrow</tool>
     <tool>golden apple</tool>
 </tool-repair>
+<kill-rewards>
+    <kill-reward>
+        <item>golden apple</item>
+        <item amount="4">arrow</item>
+    </kill-reward>
+    <kill-reward filter="only-attackers">
+        <item amount="4">wood</item>
+    </kill-reward>
+    <kill-reward filter="only-defenders">
+        <item amount="4">sandstone</item>
+    </kill-reward>
+</kill-rewards>
 </map>
 
